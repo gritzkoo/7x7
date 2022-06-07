@@ -19,38 +19,38 @@ ___
 
 ### L3
 
-Embora muito se prega em utilizar-se de [design-patterns] como [SOLID, DDD, TDD, STRATEGY, etc], todos tem o objetivo de 
+Embora muito se prega em utilizar-se de [design-patterns] como [SOLID, DDD, TDD, STRATEGY, etc], todos tem o objetivo de padronizar e organizar projetos, embora pessoalmente não os sigo à risca, pois teoria e prática nem sempre andam juntas. Eu os uso como base de norteamento e os uso da forma que melhor resolve cada problema.
 
 - [2016-2017 - luxfacta Projeto Modulação fabril]
-  Fui responsável por definir padrão de projeto para implementação de nova ferramenta para AMBEV-Brasil para gestão de produção de cervejas , atuando como lider técnico e arquiteto.
-  Como lider técnico tive a missão de aprender para poder ensinar uma equipe de 12 desenvolvedores uma nova tecnologia (na época) de front-end chamada KNOCKOUT-JS para construção de um front-end reativo com padrão MVVM onde maior desafio foi conseguir ter precisão arbitrária de 20 decimais para contas complexas de fórmulas matemáticas para gestão do sistema. Já para back-end o desafio foi criar integrações com sitemas legados de gestão, para extração de dados automatizados para preencher a estrutura básica de dados da nova aplicação para facilitar o processo de migração de ferramenta.
+  Atuei como lider de projeto e arquiteto. Criei front-end reativo usando MVVM e FACTORY com libjs knowkout-js. Já no backend, usando framework LARAVEL, foi utilizado padrão misto de DDD com MVC
 
 - [2017-2018 - Luxfacta Projeto Interactionlog]
-  Como lider de equipe, fui responsável por entrar no projeto já em andamento, onde a estrutura base estava desorganizada, minha missão foi aprender/organizar todos os escopos do histórico do projeto e realizar um Refactor da aplicação para melhoria tanto de performance quanto de usabilidade, que na época estava cheio de bugs e débitos técnicos. A tecnica usada para melhorar o projeto foi de adequação com padrão DDD na separação bem clara dos domínios e responsabilidades, trazendo uma melhora de 70% na velocidade de processamento (média caiu de 5s para 800ms). No processo, fui responsável em treinar a equipe para poder manter o padrão e boas práticas.
+  Também atuando como lider técnico e arquiteto, fiz migração do projeto legado para usar MVVM com FACTORY no front-end, refactor do back-end para usar DDD FACTORY MVC
 
 - [2019-2020 Dextra Projeto Mobile-api]
-  Fui responsável por migrar o mecanismo de pesquisa de SOLR para Datajet, onde o maior desafio foi aprender um novo framework PHP para poder fazer a documentação que não existia da API, fazer um refactor para tirar a implementação acoplada com todos os conponentes da API para conseguir criar uma factory de mecanismos de pesquisas, separando as responsabilidades com padrão DDD.
+  Fui responsável por fazer refactor mecanismo de pesquisa usando FACTORY DDD, também fiz refactor e update da aplicação para evoluir de PHP 5.5 para 7.3 reescrevendo boa parte dos testes unitários migrando PHP-Unit de 3.5 para 8.9.
 
 - [2020-2021 Dextra Projeto FINDING-TEAN]
-  Fiquei encarregado da manutenção e gestão da API principal de catálogo que era em uma stack que eu não dominava, aprendi GOLANG, fiz um package publicado em <https://pkg.go.dev/github.com/gritzkoo/golang-health-checker/pkg/healthcheck> que é usado como componente instalado em muitas aplicações no cliente e na comunidade.
+  Fui responsável pelo refactor da catalog-search para melhoria de:
+  - performance: reduzindo tempo de respostas de 1.4s para < 500ms, reduzindo código legado e passos que não faziam mais sentido, separando responsabilidades usando DDD
+  - melhoramento de monitoria, usando lib compartilhada de health-check criando dashboards mais específicos para tracing de rede, implementando um API GATEWAY para mitigar problemas de comunicação com Datajet
+  - padronização de logs, usando padrão JSON
 
-- [2021 Dextra Iniciativa PCI Dafiti]
-  Fui incumbido da responsabilidade de fazer correções de segurança em aplicação PCI em uma stack que eu não sabia (scala). Tive de aprender para ensinar time pequeno de 2 devs. Maior desafio foi aprender a stack, a estruturação do projeto para poder fazer pequenos refactores, usando DDD para entregar os ajustes solicitados de segurança sem comprometer a plataforma de pagamentos!
+- [2020-2021 Dextra Projeto CATALOG-FRONT SOFIA]
+  Fui responsável por fazer migração de ec2 para eks. Essa app passou por um refactor para ficar compatível com environments, padronização de logs, monitoria.
+  Para padronizar essa app, e criar um padrão para Dafiti, desenvolvi um padrão não comunm no merdado de padrão de imagem Docker multilayer, onde em conjunto do Docker compose foi possível deixar a pipeline agnostica a stack, e com isso, conseguimos definir um padrão para migração de outras apps utilizando a mesma abordagem.
 
 ### L4
 
-Consigo constantemente engajar os times ao qual faço suporte a melhorarem as entregas com qualidade, mesmo que o cenário não é propício para isso, as vezes sendo o pivô de alguns conflitos, mas sempre com a qualidade em primeiro lugar
-Exemplo das iniciativas:
+- [2016-2017 - luxfacta Projeto Modulação fabril]
 
-[2015~2019 Luxfacta Cliente:Ambev~ABInbev]
-- [COMPLEXIDADE TÉCNICA] Aprender para poder ensinar uma equipe de 12 pessoas a usar tecnologia de front-end chamada [knockout-js] para construir uma aplicação reativa para gestão de produção.
-- [ADVERSIDADE] Ao enfatizar que a aplicação não estava usando boas práticas de código ao qual iriam prejudicar a entrega da funcionalidade solicitada, foi usado todos os meios de comunicação possíveis (gestores, coordenadores e devs) porém não surtiu efeito. Foi necessário uma escalada para o C-Level passando os pontos negligenciados aos demais ao qual resultou em uma demissão em massa no cliente! [Brasil Pré Pagos (BPP)].
+  [COMPLEXIDADE TÉCNICA] Tive de aprender para poder ensinar KNOCKOUTJS, lib pouco conhecida na época de front-end, com documentação pouco intuitiva.
 
-[2019~2022 Dextra-CI&T Cliente:Dafiti]
-- [ESCALA] Migração eks sofia (refatoração da aplicação para conversão de boas práticas em apps para containers) foi uma iniciativa de suporte para outro time [cross] que estava com um desafio de fazer ajustes em uma stask ao qual não dominavam, e ensinar [docker, docker-compose, helm, argo-cd, gitops, kubernetes] para
-- [COMPLEXIDADE TECNICA] aprender para poder ensinar [golang] para dar manutenção e refactor de microserviço de catálgo. Também fui responsável em ensinar a stack de [golang] para outra consultoria [ESCALA] para poder incluir novas funcionalidades no microserviço [ADVERSIDADE] onde os devs de lá tinham problemas de comunicação o que dificultou a entrega da inclusão de ADS.
-- [ESCALA] Ajuda contexto de Payment em aplicações legadas PHP para melhoria de código e boas práticas (iniciativa do bacen)
-- [ADVERSIDADE] Mapeamento global das APIs dafiti para ajuda na estratégia para nova arquitetura de new app backend.
+- [2020~presente]
+  - [ESCALA]
+    - Criei uma aplicação template na Dafiti escrita em GOLANG para padronizar tanto o padrão de pipeline agnóstica, quando padrão de imagem Docker multi-layer com camadas com responsabilidades únicas para viabilizar uma chamada de CI apenas na pipeline. Esse projeto também padroniza a estrutura básica de deployment usando helm com gfg-application-web chart da dafiti, padroniza também resposta de health-check. Esse template também é utilizado como guide-line para outras stacks na geração de novos projetos de template e documentação dos processos de criação de novas aplicações na Dafiti.
+    - Jutno à migração do SOFIA, o padrão madurecido nessa iniciativa é utilizado em vários outros projetos seguindo os mesmos guide-lines de padrão de [pipeline, docker, docker-compose, helm]. Esses padrões hoje estão documentados no cliente no Confluense para iniciar novas APPS
+
 ___
 
 ## Coding Excellence: Avalio e defino padrões para codificação garantindo que sejam seguidos por todo o time
