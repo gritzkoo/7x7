@@ -157,3 +157,14 @@ Exemplo das iniciativas:
 - [COMPLEXIDADE TECNICA] aprender para poder ensinar [golang] para dar manutenção e refactor de microserviço de catálgo. Também fui responsável em ensinar a stack de [golang] para outra consultoria [ESCALA] para poder incluir novas funcionalidades no microserviço [ADVERSIDADE] onde os devs de lá tinham problemas de comunicação o que dificultou a entrega da inclusão de ADS.
 - [ESCALA] Ajuda contexto de Payment em aplicações legadas PHP para melhoria de código e boas práticas (iniciativa do bacen)
 - [ADVERSIDADE] Mapeamento global das APIs dafiti para ajuda na estratégia para nova arquitetura de new app backend.
+
+
+
+
+
+
+
+
+
+
+Embora eu sou conhecido entre os devs como uma pessoa que é dura na review de PRs, sempre tendo compartilhar meu conhecimento adquirido ao logo da carreira para ajudar os demais a evoluir na carreira, mas com uma segunda inteção de tentar manter um padrão.

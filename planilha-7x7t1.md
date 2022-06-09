@@ -57,6 +57,15 @@ ___
 
 ### L3
 
+Entre os padrões que eu identifiquei na minha carreira, as de maior relevância para compartilhar aqui seria
+
+- Padronização de probes de liveness e readiness onde sou autor de duas bibliotecas OpenSouce para ser usada tanto nas aplicações do cliente quanto para toda comunidade dev
+  - <https://github.com/gritzkoo/golang-health-checker>
+  - <https://github.com/gritzkoo/nodejs-health-checker>
+- Padronização do desenho de pipelines deixando elas agnosticas à stack do projeto, essa padronização visa a utilização de Dockerfile com multilayer bem definidos com estratégia de CI interna, junto à implementação do Docker Compose com um serviço de nome CI, que é apenas chamado na pipeline `docker-compose run --rm ci` para que tudo o que é necessário para configurar, instalar e subir seja feito em apenas 1 step
+- Padronização do branch strategy (ainda não apresentado apra toda engenharia até o momento) para mudar a forma como a Dafiti faz suas entregas. Esse padrão visa deixar igual a nomenclatura de branchs e configurações do github/circle-ci para que não tenha branchs que ficam acumulando um histórico muito grande de alterações, forçando ter vida curta. Já na pipeline, o padrão visa diminuir o uso dos runners fazendo a execução de tasks somente quando ela é mais relevante, como por exemplo, rodar testes somente nas features branchs, e da release branch para frente, não rodar mais esses passos. A branch release é a única que gera o artefato (seja registry ou qualquer outra coisa), e a publicação no 1º ambiente, seguindo apenas com a promossão desse artefato de ambiente para outro, garantindo a entrega explícita do que foi testado. Junto a essa estratégia, toda uma documentação está sendo feita para se tornar material de treinamento da engenharia para garantir que todos sigam esse novo modelo de trabalho.
+
+<!-- 
 - [2016~2018 Luxfacta Projeto Modulação Fabril]
 Defini o padrão para implementação de contas automáticas usando [knockoutjs], com auxílio da lib [bignumberjs] para conseguir precisão arbitraria de 20 decimais. O padrão definido tirava a responsabilidade de validações numerais como [não nulo, diferente de zero, é numero, !NaN] de todos os parametros para chamada dos cálculos, deixando o código mais limpo, e criando uma [factory] para chamada dos cálculos, centralizando em um único ponto, a entrada dos argumentos para tratativa e manutenção das fórmulas matemáticas.
 Ainda no mesmo projeto, criei uma interface de cadastro de clientes para API onde era gerado um par de chaves ssh ao qual era utilizado para fazer criptografia dos dados de comunicação de cada cliente da API(serviço) com sistema de monitoria para cada cliente isolado.
@@ -72,10 +81,11 @@ Criei duas libs para padronizar chamadas de [health-check liveness e readiness] 
 - [2021~2022 Dextra-CI&T Dafiti]
 Criei projeto [golang] de template para criação de novos microserviços que além de padronizar o código/estrutura do projeto, padroniza pipeline agnostica e com observabilidade.
 Atualmente estou criando novos padrões de projetos e pipelines para padronizar também os projetos legados.
-
+-->
 ### L4
 
-- [2016~2018 Luxfacta Projeto Modulação Fabril]:
+Nos todos os exemplos citados no L3 se enquadrão no quesito [ESCALA], pois eles envolvem atividades cross, impactando não somente 1 time ou projeto mas sim o cliente como um todo.
+<!-- - [2016~2018 Luxfacta Projeto Modulação Fabril]:
   - [ESCALA] Minha participação no projeto envolvei mais de 2 equipes, tanto interna Luxfacta quando externa (cliente), onde os treinamentos necessários foram feitos para manter o padrão do projeto.
   - [ADVERSIDADE] Os times eram contrários à escolha das tecnologia [knockoutjs] por falta de conhecimento da ferramenta, onde os conflitos foram solucionados com sessões de treinamentos intensivos.
 - [2019~2020 Dextra Cliente Dafiti]:
@@ -84,7 +94,7 @@ Atualmente estou criando novos padrões de projetos e pipelines para padronizar 
 - [2020~2021 Dextra Cliente Dafiti]:
   - [COMPLEXIDADE TÉCNICA] Ambas as stacks [golang nodejs] foram aprendidas para poder criar as bibliotecas e criar os padrões para o cliente.
 - [2021~2022 Dextra-CI&T Dafiti]:
-  - [COMPLEXIDADE TECNICA] Entrando no mundo DevOps para conseguir padronizar as pipelines do cliente, estou aprendendo [kubernetes, argocd, helm] para melhorar meu entendimento das stacks para melhorar a qualidade das entregas do cliente.
+  - [COMPLEXIDADE TECNICA] Entrando no mundo DevOps para conseguir padronizar as pipelines do cliente, estou aprendendo [kubernetes, argocd, helm] para melhorar meu entendimento das stacks para melhorar a qualidade das entregas do cliente. -->
 ___
 
 ## Coding Excellence: Investigo e aplico diferentes métodos de análise, identificando e solucionando problemas técnicos.
