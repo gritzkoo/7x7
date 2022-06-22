@@ -1,4 +1,4 @@
-# Para preencher experiências:
+# Para preencher experiências
 
 Para níveis 3 e 4, comece pelas evidências. As evidências devem mencionar a `situação` (projeto e momento) onde os `exemplos ocorreram`, com objetivo de demonstrar `consistência`.
 
@@ -9,9 +9,9 @@ Para atingir consistência, espera-se cerca de `~6 meses de atuação`.
 - `Nível 2: Nível de capacidade, ou nível de conhecimento prático` - esperado que a pessoa tenha consistência em praticar o que está sendo pedido, com suporte.
 - `Nível 3: Nível de proficiência` - esperado que a pessoa tenha consistência em praticar o que está sendo pedido sem nenhum suporte.
 - `Nível 4: Nível expert` - esperado que a pessoa tenha experiência em praticar o que está sendo pedido em cenários complexos. Cenários válidos a serem usados de exemplo abaixo:
-  - 1 - Escala - Os seus exemplos demonstram que você atuou em maior escala (Múltiplos times ou projetos)
-  - 2 - Adversidade - Os seus exemplos demonstram que você atuou em cenários adversos (cliente ou situação complicada e/ou atenuada, requerendo energia extra em comunicação e alinhamentos ou escalações frequentes)
-  - 3 - Complexidade técnica - Os seus exemplos demonstram atuação em uma tecnologia diferente da que habitualmente trabalha, que seja peculiar, com poucos profissionais especialistas, e/ou muito nova no mercado, com nenhum ou pouquíssimo suporte externo e interno."
+  - 1 - **Escala** - Os seus exemplos demonstram que você atuou em maior escala (Múltiplos times ou projetos)
+  - 2 - **Adversidade** - Os seus exemplos demonstram que você atuou em cenários adversos (cliente ou situação complicada e/ou atenuada, requerendo energia extra em comunicação e alinhamentos ou escalações frequentes)
+  - 3 - **Complexidade técnica** - Os seus exemplos demonstram atuação em uma tecnologia diferente da que habitualmente trabalha, que seja peculiar, com poucos profissionais especialistas, e/ou muito nova no mercado, com nenhum ou pouquíssimo suporte externo e interno."
 
 ___
 
@@ -97,20 +97,36 @@ Nos todos os exemplos citados no L3 se enquadrão no quesito [ESCALA], pois eles
   - [COMPLEXIDADE TECNICA] Entrando no mundo DevOps para conseguir padronizar as pipelines do cliente, estou aprendendo [kubernetes, argocd, helm] para melhorar meu entendimento das stacks para melhorar a qualidade das entregas do cliente. -->
 ___
 
-## Coding Excellence: Investigo e aplico diferentes métodos de análise, identificando e solucionando problemas técnicos.
+## Coding Excellence: Investigo e aplico diferentes métodos de análise, identificando e solucionando problemas técnicos
 
 ### L3
 
-- [2017 Luxfacta Projeto Interactionlog]
-  O projeto foi migrado para servidor linux (antes windows) onde muitos problemas de publicação foram encontrados. Os métodos para identificação dos problemas foram acompanhar os dashboards de métricas e os logs da aplicação para identificação dos erros, mas todos os problemas levantados eram referentes à configuração do sistema operacional da máquina EC2 com apache. Na época eu não sabia nem linux nem apache, foi necessário aprender ambos para poder solucionar os problemas sozinhos, embora existia um time de infra do cliente AMBEV da UOLDIVEL ao qual se negou a ajudar solucionar os problemas na época. Os ajustes foram realizados com sucesso.
-- [2018 Luxfacta projeto atendimento]
-  Problemas de performance da aplicação, foi necessário acompanhamento das métricas do banco de dados (SQL-server) para entender onde os problemas estam acontecendo. Após encontrados, tive de estudar banco de dados mais aprofundadamente para poder lidar com a iniciativa dos ajustes de performance junto ao time do projeto.
-- [2019~Atualmente Dafiti]
-  Hoje sou considerado pelo cliente a referência em troubleshooting, sendo constantemente solicitado para acompanhar os incidentes da loja em produção para ajudar tanto na tomada de decisões quando na soluções (paleativas ou definitivas) dos problemas. Os componentes ou projetos que sou mais considerado referência hoje são [bob mobile-api memcache catalog-search catalog-front alice docker-dafiti shared bootstrap php-memcache-toolkit]
+Sou considerado no cliente onde trabalho hoje, uma referência no quesito de resolver problemas complexos em ambiente produtivo to tipo top-down.
+Constantemente estou envonvido em salas de warroon para ajudar a fazer análise de problemas e atuando na solução dos mesmos. Meu processo de investigação consiste em:
+
+- Analisar logs da aplicação em elasticsearch (graylog ou kibana)
+- Analisar graficos de telemetria de hardware (usando APM Instana ou Newrelic) como consumo de memória/cpu/rede
+- Analisar saúde de cluster k8s analisando recursos reservados vs utilizados usando APM Instana
+- Criação de dashboards customizados em grafana para trace de problemas customizados, com auxilio de logs aprimorados em aplicações.
+- Criação de aplicações simples para ajudar a fazer troubleshooting de forma agnostica as aplicações, como por exemplo a ferramenta `php-memcache-toolkit` feita para ajudar a validar e verificar dados no servidor memcache e migrar dados cross ambientes.
+
+Essa habilidade foi aprimorada em muitos projetos que atuei em minha carreira e não somente aqui na CI&T. A baixo irei listar alguns exemplos:
+
+- [2017 Luxfacta projeto Interactionlog]
+  - Consegui identificar, através da análise dos logs da aplicação, problemas de compatilidade das bibliotecas instaladas na aplicação e a integração com banco de dados SQL-Server. O ambiente de desenvolvimento era Windows, e o ambiente produtivo era Linux (open susy), e por conta disso todos os dados da integração com um banco de dados especívico do cliente foi comprometida. Na época a solução mais rápida foi migrar o ambiente produtivo para Windows, e com isso o problema foi mitigado.
+- [2018 Luxfacta projeto Atendimento]
+  - Através de investigação dos logs e com validação de execução no banco de dados da aplicação, consegui identificar problemas nas consultas geradas no banco de dados que estavam gerando gargalos de execução da aplicação. Com essa análise e os dados em mãos, foi possível fazer uma lista de tarefas a serem feitas no projeto para melhorar as consultas à base de dados. Fui o protagonista no sentido de puxar as informações e montar uma estratégia junto ao time para realizar as tarefas.
+- [2019 Dextra cliente Dafiti blackfriday 19]
+  - Durante a blackfriday de 2019, atuei diretamente no time de suporte para manter a loja no ar validando boards de telemetria do grafana e newrelic. Um problema muito específico aconteceu com os servidores de memcache onde parte da navegação do catalog estava comprometida por falta de dados no servidor memcache. Eu criei uma aplicação separada da API para tirar metricas e dados do servidor memcache, a `php-memcache-toolkit` para validar, analisar e injetar dados nos servidores memcache. Com isso conseguimos identificar o gap entre servidores
+- [2020 Dextra cliente Dafiti projeto mobile-api]
+  - Com meus conhecimentos em PHP consegui corrigir problemas de escalabilidade da API, fazendo análise dos dados do APM (Newrelic), e realizando ajustes nos parâmetros do php-fpm, nginx e limites do K8s. Também fiz ajustes nas multi-camadas da imagem Docker para conseguir usar de forma mais aprimorada um container mais enxuto, utilizando imagem oficial da stack. Isso melhorou a performance da aplicação em mais de 20%.
+- [2021 Dextra cliente Dafiti projeto catalog-search]
+  - Investigação de problemas de comunicação entre a API da Dafiti catalog-search e o serviço de catálogo Datajet estavam gerando perda de vendas do cliente. O método de análise utlilizado foi usar o cloudwatch da aws e tirar core-dump das máquinas para ter insumos de dados sobre comunicação entre os clusters k8s para validação de rotas. O problema consiste até hoje na Dafiti, pois o problema está do lado da Datajet, mas foi resolvido parcialmente o problema, adicionando um API GATEWAY entre a comunicação das APIs para que mais métricas fossem registradas para gerar dashboards mais elaborados no grafana para ajudar no troubleshooting do problema. Foi incluido no API GATEWAY também uma camada extra de cache para evitar solicitações multiplas para a API e mitigar ainda mais o problema.
+
 
 ### L4
 
-Consigo facilmente passar do contexto de engenharia para infraestrutura sabendo investigar cross contexto problemas nas plataformas do cliente, mesmo quando C-level está junto nas warroons.
+<!-- Consigo facilmente passar do contexto de engenharia para infraestrutura sabendo investigar cross contexto problemas nas plataformas do cliente, mesmo quando C-level está junto nas warroons.
 Em grande parte das investigações assumo posição de protagonismo puxando o racional junto ao time de engenharia e SRE.
 Uso nas investigações ferramentas como GRAFANA, GRAYLOG, INSTANA, NEWRELIC, CLOUDWATCH.
 Em alguns casos, crio logs específicos para montagem de dashboards customizados para tracking de pontos já conhecidos, o mais famoso no cliente é o dashboard das Mobiles onde é possivel rastrear problemas relacionados ao MEMCACHED, ponto de maior falha da engenharia do cliente.
@@ -129,7 +145,7 @@ Complementando os pontos citados no L3 com profundidade.
     - [new-app] Embora a iniciativa é para um novo app[front-end], eu fui o protagonista que puxou junto ao coordenador da época [will lopes] para evidênciar os problemas de toda a plataforma, não se limitando apenas em front-end. Todo um mapeamento foi feito de mehorias de back-end foi feito para deixar explicito que era necessário "arrumar a casa" para dar suporte para iniciativa do novo app, porém, muita coisa conteceu durante o processo, e toda a camada da gestão/C-Level mudou no meio da iniciativa, e todo o mapeamento foi descreditado pelo gerente atual [braz] com o discurso que "a dafiti não tem problemas no back-end". Foi extremamente complicado explicar para ele sobre o engano que ele estava fazendo, mas infelizmente essa batalha eu não conquistei, e lamentavelmente fui designado apra outra iniciativa sem conseguir conquistar o espaço necessário para fazer as ações mapeadas.
     - [incidentes no geral] Várias vezes eu fui protagonista nas salas de warroom, quando C-Level estava presente tanto para esplicar as problemáticas quanto para mapear as ações com time de SRE/Engenharia para solução de problemas.
   - [COMPLEXIDADE TÉCINICA]
-    - [apps no geral] Aprendi kubernetes argo-cd helm, aws, docker, ecr, ec2, golang, nodejs, scala para conseguir melhorar minha hardskill para ser considerado hoje a referência nos troubleshootings da plataforma como um todo.
+    - [apps no geral] Aprendi kubernetes argo-cd helm, aws, docker, ecr, ec2, golang, nodejs, scala para conseguir melhorar minha hardskill para ser considerado hoje a referência nos troubleshootings da plataforma como um todo. -->
 
 ___
 
@@ -189,7 +205,7 @@ ___
 
 ___
 
-## Continuous Delivery: Identifico métricas técnicas ou de negócio e implanto o monitoramento das mesmas, dando ciência delas ao cliente ou ao time.
+## Continuous Delivery: Identifico métricas técnicas ou de negócio e implanto o monitoramento das mesmas, dando ciência delas ao cliente ou ao time
 
 ### L3
 
@@ -237,7 +253,7 @@ ___
 
 ___
 
-## Quality: Planejo e faço testes exploratórios / manuais de forma eficiente e garantindo a execução do fluxo completo.
+## Quality: Planejo e faço testes exploratórios / manuais de forma eficiente e garantindo a execução do fluxo completo
 
 ### L3
 
@@ -341,7 +357,7 @@ ___
 
 ___
 
-## Process: Mobilizo o time e participo de agendas para melhoria contínua, criando uma lista de ações futuras utilizando métricas de processo como referência.
+## Process: Mobilizo o time e participo de agendas para melhoria contínua, criando uma lista de ações futuras utilizando métricas de processo como referência
 
 ### L3
 
@@ -357,7 +373,7 @@ ___
 
 ___
 
-## Teamwork: Identifico e formo sucessores, diminuindo as dependências de pessoas específicas ou para viabilizar crescimento.
+## Teamwork: Identifico e formo sucessores, diminuindo as dependências de pessoas específicas ou para viabilizar crescimento
 
 ### L3
 
