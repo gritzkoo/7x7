@@ -122,30 +122,28 @@ Essa habilidade foi aprimorada em muitos projetos que atuei em minha carreira e 
   - Com meus conhecimentos em PHP consegui corrigir problemas de escalabilidade da API, fazendo análise dos dados do APM (Newrelic), e realizando ajustes nos parâmetros do php-fpm, nginx e limites do K8s. Também fiz ajustes nas multi-camadas da imagem Docker para conseguir usar de forma mais aprimorada um container mais enxuto, utilizando imagem oficial da stack. Isso melhorou a performance da aplicação em mais de 20%.
 - [2021 Dextra cliente Dafiti projeto catalog-search]
   - Investigação de problemas de comunicação entre a API da Dafiti catalog-search e o serviço de catálogo Datajet estavam gerando perda de vendas do cliente. O método de análise utlilizado foi usar o cloudwatch da aws e tirar core-dump das máquinas para ter insumos de dados sobre comunicação entre os clusters k8s para validação de rotas. O problema consiste até hoje na Dafiti, pois o problema está do lado da Datajet, mas foi resolvido parcialmente o problema, adicionando um API GATEWAY entre a comunicação das APIs para que mais métricas fossem registradas para gerar dashboards mais elaborados no grafana para ajudar no troubleshooting do problema. Foi incluido no API GATEWAY também uma camada extra de cache para evitar solicitações multiplas para a API e mitigar ainda mais o problema.
+- [2022 fevereiro CI&T Cliente Dafiti servidores de Mencached]
+  - Investigação relacionada à falhas constantes nos servidores de memcache que perdiam dados e tiravam a loja, parcialmente, do ar. O problema foi identificado analizando as configurações de ingraestrutura dos servidores, que estavam usando mapeamento de DNS de forma errada para multiplos servidores, ao invés de usar o serviço de NLB(network load balancer). Após diagnosticado, a atuação foi repassar todas as configurações das máquinas EC2, definindo DNS, tirando confiugração de IPs chumbados no código, e redirecionando as aplicações de consulta, para passarem a usar o NLB. O problema foi solucionado e até o momento estamos sem mais incidentes com esse componente.
 
 
 ### L4
 
-<!-- Consigo facilmente passar do contexto de engenharia para infraestrutura sabendo investigar cross contexto problemas nas plataformas do cliente, mesmo quando C-level está junto nas warroons.
-Em grande parte das investigações assumo posição de protagonismo puxando o racional junto ao time de engenharia e SRE.
-Uso nas investigações ferramentas como GRAFANA, GRAYLOG, INSTANA, NEWRELIC, CLOUDWATCH.
-Em alguns casos, crio logs específicos para montagem de dashboards customizados para tracking de pontos já conhecidos, o mais famoso no cliente é o dashboard das Mobiles onde é possivel rastrear problemas relacionados ao MEMCACHED, ponto de maior falha da engenharia do cliente.
-Outro dash de troubleshooting muito usado foi de problemas relacionados à comunicação da API de catálogo do cliente para a API do 3º que entrega o conteúdo mapeando e evidenciando problemas relacionados à rede.
-Complementando os pontos citados no L3 com profundidade.
+A habilidade de investigar problemas e solucioná-los está sempre vinculada com algum tipo de complexidade, e nos exemplos que eu citei não é diferente!
 
-- [2017 Luxfacta Projeto Interactionlog]
-  - [COMPLEXIDADE TÉCNICA] Foi necessário aprender em tempo record sistema operacional LINUX(red hat), servidor web APACHE, para conseguir solucionar os problemas técnicos
-  - [ADVERSIDADE] Todos os envolvidos no projeto estavam com os animos exaltados, a comunicação não estava fluindo, o dono da Luxfacta na época foi incluido na iniciativa para "prestações de contas" sobre o projeto não estar sendo "entregue" no "esparado/planejado". A cultura do cliente não era das melhores, o principal amago era achar os culpados achar pretestos para sanar os pagamentos. A pressão na entrega desse projeto em específico foi grande, mas ajudou a melhorar bastante as softskills de comunicação.
-- [2018 Luxfacta projeto atendimento]
-  - [COMPLEXIDADE TÉCNICA] Foi necessário aprender com profundidade os conseitos de banco de dados SQL-server para conseguir resolver esse problema técnico, embora não era o objetivo da minha carreina naquele momento, aceitei o desafio, e conseguir aprender e resolvi os problemas da iniciativa com qualidade.
-- [2019~Atualmente Dafiti]
-  - [ADVERSIDADE] A comunicação em alguns projetos nunca foram fluidos, algumas escalações eram constantes. 
-    - [mobile-api] Para migrar a versão do PHP da mobile-api de 5.5 para 7.3 na época foi complexa porque o engenheiro "responsável" da Dafiti na época já tinha feito um discurso dizendo que era impossível fazer por retro-compatibilidade do framework da aplicação, ao qual não era verdade, ele apenas não queria (pessoalmente) migrar a versão por querer forçar migrar a stack de PHP para python na época. Minha posição nesse cenário foi realizar mesmo assim a migração da versão, e entregar a melhoria sem o aval do responsável, apenas escalando que os discursos não eram verdadeiros, e consegui entregar a melhoria.
-    - [catalog-search] Implementação da feature Dafiti ADS, a consultoria responsável(envilha) não era proficiente em golang, e muitos discursos de falácias de dificuldades aleatórias eram usadas para mitigar a entrega da feature. Eu entrei e desenvolvi sozinho a feature não só na catalog-search, como também na [mobile-api] apenas para servir de exemplo em como fazer a feature. Os desenvolvedores envolvidos eram muito juniors, e não entendiam a complexidade ao qual o desafio pedia, a comunicação era muito falha, foi necessário fazer muitas escalações e até pedidos de substituição dos envolvidos por falta de proficiência.
-    - [new-app] Embora a iniciativa é para um novo app[front-end], eu fui o protagonista que puxou junto ao coordenador da época [will lopes] para evidênciar os problemas de toda a plataforma, não se limitando apenas em front-end. Todo um mapeamento foi feito de mehorias de back-end foi feito para deixar explicito que era necessário "arrumar a casa" para dar suporte para iniciativa do novo app, porém, muita coisa conteceu durante o processo, e toda a camada da gestão/C-Level mudou no meio da iniciativa, e todo o mapeamento foi descreditado pelo gerente atual [braz] com o discurso que "a dafiti não tem problemas no back-end". Foi extremamente complicado explicar para ele sobre o engano que ele estava fazendo, mas infelizmente essa batalha eu não conquistei, e lamentavelmente fui designado apra outra iniciativa sem conseguir conquistar o espaço necessário para fazer as ações mapeadas.
-    - [incidentes no geral] Várias vezes eu fui protagonista nas salas de warroom, quando C-Level estava presente tanto para esplicar as problemáticas quanto para mapear as ações com time de SRE/Engenharia para solução de problemas.
-  - [COMPLEXIDADE TÉCINICA]
-    - [apps no geral] Aprendi kubernetes argo-cd helm, aws, docker, ecr, ec2, golang, nodejs, scala para conseguir melhorar minha hardskill para ser considerado hoje a referência nos troubleshootings da plataforma como um todo. -->
+- [2017 Luxfacta projeto Interactionlog]
+  - [ADVERSIDADE] Nesse projeto, o cliente Ambev já estava muito alterado com a cituação, pois o sistema era a plataforma oficial de avaliação de desempenho dos funcionários e também uma plataforma de log de trabalho, como se fosse um checkbox diário de atividades, e como o sistema estava constantemente dando problemas, várias pessoas foram prejudicadas pela instabilidade do sistema, e os animos estavam muito exaltados. Atuar em um ambiente perturbado é bem mais complexo e exigiu muita energia extra para manter a calma da equipe, gerentes e analistas para encontrar a solução e entregar para o cliente
+- [2018 Luxfacta projeto Atendimento]
+  - [COMPLEXIDADE TÉCNICA] Nesse desafio foi necessário aprender muito sobre banco de dados para poder solucionar o problema, e como essa não era uma skill muito evoluida minha na época, foi onde tive a oportunidade de estudar muito e fazer a aplicação de tudo que aprendi para solucinar o problema
+- [2019 Dextra cliente Dafiti blackfriday 19]
+  - [COMPLEXIDADE TECNICA] Foi quando eu consolidei meu conhecimento em ferramentas como GRAYLOG, GRAFANA KIBANA para conseguir ter telemetria de sistema em tempo real, e como em toda minha carreira eu não tinha tido a oportunidade de atuar com esse ferramental, foi necessário um esforço extra para conseguir aprender para poder ensinar a usar essas ferramentas e conseguir diagnosticar problemas com mais eficiência.
+  - [ADVERSIDADE] Durante essa blackfriday, os servidores de memcache falharam, e por conta disso, a navegação do catálogo de produtos dos aplicativos foram prejudicadas. Como minha atuação naquele ano foi a substituição do mecanismo de pesquisa, o problema foi vinculado com a entrega do novo catálogo na API, e deveras não era esse o problema, e a complexidade gerada pelo cliente foi encontrar energia para explicar que, o problema era nos servidores de memcache e não na implementação da API do catálgo foi grande. Depois de explicada, eu criei uma ferramenta para auxiliar a análise do memcache na Dafiti, o `php-memcache-tool-kit` e conseguimos realizar os ajustes necessários em tempo record e voltar o catálogo no ar!
+- [2020 Dextra cliente Dafiti projeto mobile-api]
+  - [COMPLEXIDADE TÉCNICA] Para conseguir atingir esses objetivos, foi necessário evoluir a versão do php de 5.5 para 7.3(versão top-1 da época) para ter acesso à algumas funcionalidades novas que viabilizariam os ajustes. A migração de versão iria acarretar em um refactor em 100% das classes de teste, uma vez que o phpunit teria de subir de 2.9 para 8.5 e nenhuma ferramenta automatizada para isso existe. A migração de versão foi um sucessso!
+  - [ADVERSIDADE] Embora a migração tenha ocorrido sem problemas, os engenheiros da Dafiti da época não queriam continuar a dar suporte à aplicações escritas em PHP, e estavam pregando o discurso de que não era possível migrar a versão do php para uma mais recente e que não valia a pena o esforço, e que era melhor usar esse tempo e esforço para mudar a tecnologia da API, que na época estavam cogitando em mudar para python. Foi necessário energia extra para conseguir explicar e provar que era possível fazer a migração na aplicação sem a necessidade de big-bang mudando a stack do projeto, mas como isso era contra os princípios do responsável pela API no cliente, foi necessário realizar essa migração escondida do cliente e entregar os resultados mesmo assim.
+- [2021 Dextra cliente Dafiti projeto catalog-search]
+  - [COMPLEXIDADE TÉCNICA] Tive de aprender para a stack de GOLANG para poder conseguir atuar nesse projeto, e junto a stack, componentes de cloud como API GATEWAY, CLOUDWATCH, ATHENA. Como o desafio à ser resolvido era muito complexo para minha hardskill da época, foi necessário uma energia extra nos estudos para conseguir atender as espectativas do cliente na solução desse problema.
+- [2022 fevereiro CI&T Cliente Dafiti servidores de Mencached]
+  - [COMPLEXIDADE TÉCNICA] Aqui nesse desafio foi necessário consolidar meus conhecimentos em servidores memcache para conseguir definir qual seria a forma correta de confiurações tanto de aws quanto de aplicações para resolver o problema. Minha atuação foi em conjuto com o time de SRE da Dafiti, mas tive papel de protagonismo nas sugestão das ações de melhorias, e minhas sugestões foram muito bem aceitas nos planejamentos, e na execução, todos funcionaram e trouxeram o resultado esperado, redução de incidentes com servidores de memcache e downtime de catálogo.
 
 ___
 
@@ -153,16 +151,47 @@ ___
 
 ### L3
 
+- [2015 - Luxfacta projeto PMT]
+  - Levantamento de códigos duplicacos com auxilio da ferramenta sonarqube para montar lista de backlog para inclusão nas tarefas das sprints.
+  - Atuei como referência na inciativa dos refactors da aplicação atuando diretamente nos pontos sinalizados pelo sonarqube
+  - redução de mais de 20% no tamanho total do pejeto utilizando as melhorias proprostas na ferramenta sonarqube
+- [2016 - Luxfacta projeto mofab]
+  - Como líder técnico da equipe de desenvolvimento, fui o protagonista na organização do projeto para viabilizar a implementação das fórmulas matemáticas complexas para reaproveitamento em todo sistema de forma unificada para facilitar testes
+- [2017 - Luxfacta projeto Interactionlog]
+  - Identifiquei oportunidade de melhorias no módulo de formulários dinâmicos da aplicação, levantando os pontos que poderiam estar mais performaticos. Atuei junto ao time no refactor fazendo uma mudança de mais de 30% na experiência do usuário do front-end no tempo de resposta da aplicação.
+  - Identifiquei códigos duplicados com auxilio do sonarqube para montagem de lista de backlog de débtos técnicos do projeto, ajudando o time projetar no tempo, as tarefas para realizar os ajustes necessários
+- [2018 Luxfacta projeto mofab Africa do sul]
+  - Como o projeto estava sendo convertido para multi-linguas, foi aproveitado para os refactors de:
+    - atualização do código base, passando de PHP-5.6 para php-7.1.3
+    - migrado o framework báse de laravel 4.2 para laravél 5.8
+    - Criado sistema proprietário de gestão de traduções do framework em banco de dados, viabilizando planilhas excel para exportar e importar traduções para 7 linguas
+    - inclusão de autenticação api via ssl com geração e cadastro de API via painel admin
+- [2019 Dextra Dafiti mobile-api]
+  - Refactor completo de todo módulo de catálogo da API dos aplicativos android ios para tirar código de catálogo acoplado e separar em contextos separados usando DDD
+  - Refactor de toda base de testes do catálogo passando framework base de testes phpunit-2.8.9 para phpunit-8.4 para
+  - Refactor do booststrap da aplicação para viabilizar a migração de versão do php de 5.5 para 7.3
+- [2020 Dextra Dafiti catalog-search]
+  - Identificado problemas de conexão entre apis de dependências externas usando graylog com métricas de redes coletadas do prometeus e cloudwatch, e com os insumos gerados foi possível mitigar problemas do catálogo da loja para BF 2020 fazendo uso do API-GATEWAY como intermediador das requisições entre os microserviços Dafiti vs Datajet
+  - Refactor da aplicação, melhorando o boostrap no start dos pods em eks, diminuindo o tempo de startup de 2min para 30s
+  - Fui protagonista na iniciativa de Dafiti ADS para montar a estratégia de implementação da nova integração com a catalog-search, viabilizando testes e métricas no grafana
+- [2021~2022 Dextra Dafiti Plataforma]
+  - Identifiquei melhorias que poderiam beneficiar a Dafiti em relação à padrões de esteira e deployment de aplicações EKS e EC2, montando junto ao meu gerente Direto Willian Lopes a estratégia para compania Dafiti para implamentar as mudanças sugeridas, e ajudar a fazer sunset de ferramentas sub-utilizadas
+  - Fui protagonista fazendo refactor de 2 grandes componentes do cliente (bob alice) tirando de ferramentas legadas o deploy para pipelines modernas (circle ci) melhorando o time to market dos times de engenharia nos sitemas citados
+
 ### L4
 
+Para simplificar a descrição, vou consolidar de forma resumida uma trajetório de N projetos!
+Os pontos mais impactantes nas aplicações, no quesito melhoria de código e resiliência das aplicações, eu fui o protagonista da implementação do padrão de health-check da stack nodejs e golang, que foi incluida em larga escala no cliente Dafiti, para melhoar a vizibilidade das aplicações.
+Os projetos de início da carreira, o foco foi muito em "arrumar a casa" fazendo refactors usando TDD DDD como guias e ferramenta de qualidade como sonarqube como validador.
+Muitos projetos do cliente atual tiveram impactos enormes nos times, sendo hoje uma referência em grande parte do cliente como sinônimo de qualidade.
 ___
 
 ## Coding Excellence: Identifico a necessidade e construo PoCs no meu contexto quando necessário, fazendo uso de frameworks ou linguagens modernas
 
 ### L3
-
+Minha stack principal é PHP, mas tenho autonomia também em NODEJS GOLANG. Faço pocs constantemente na Dafiti para poder provar conseitos de ajustes antes de alterar aplicações legadas!
 ### L4
-
+Os pontos mais impactantes nas aplicações, no quesito melhoria de código e resiliência das aplicações, eu fui o protagonista da implementação do padrão de health-check da stack nodejs e golang, que foi incluida em larga escala no cliente Dafiti, para melhoar a vizibilidade das aplicações.
 ___
 
 ## Coding Excellence: Apoio a melhoria do código de outras pessoas colaboradoras, fornecendo feedback por meio de revisões de código
