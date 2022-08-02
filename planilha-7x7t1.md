@@ -189,15 +189,38 @@ ___
 ## Coding Excellence: Identifico a necessidade e construo PoCs no meu contexto quando necessário, fazendo uso de frameworks ou linguagens modernas
 
 ### L3
-Minha stack principal é PHP, mas tenho autonomia também em NODEJS GOLANG. Faço pocs constantemente na Dafiti para poder provar conseitos de ajustes antes de alterar aplicações legadas!
+
+No meu histórico de atuação do cliente atual, faço POCs para resolver todos os problemas, entre elas, algumas viraram soluções reais como
+
+- Package golang, nodejs e PHP de health-check que nasceram de forma singela para aliviar uma dor por falta de padrões, e hoje são packages publicados oficialmente na comunidade
+  - https://github.com/gritzkoo/nodejs-health-checker
+  - https://github.com/gritzkoo/php-health-checker
+  - https://github.com/gritzkoo/golang-health-checker
+  - https://github.com/gritzkoo/golang-health-checker-lw
+- POC de estudos de AWS APIGATEWAY que virou solução de BF 2020 Dafiti que segurou audiência do catálogo da loja!
+- POC de estudos de gitops que está sendo utilizada de guidelines para branch estrategy, organização dos argo cds e nomenclaturas gerais de deployments na atuação do time atual. Esses guidelines estão sendo usados para estruturação da documetação técnica de onboarding do time de engenharia e de sre. Abaixo a lista dos repositórios usados como POCS e a minha certificação de gitops fundamentals para consolidar o conhecimento no contexto.
+  - https://github.com/gritzkoo/gitops
+  - https://github.com/gritzkoo/helm-charts
+  - https://github.com/gritzkoo/argo-class/blob/main/instalando-argocd.md
 ### L4
-Os pontos mais impactantes nas aplicações, no quesito melhoria de código e resiliência das aplicações, eu fui o protagonista da implementação do padrão de health-check da stack nodejs e golang, que foi incluida em larga escala no cliente Dafiti, para melhoar a vizibilidade das aplicações.
+
+Como as POCS citadas no L3 foram largamente utilizadas na Dafiti trazendo uma grande mudança nos processos de desenvolvimento (atual e em progresso), as ações se caracterizam no contexto de [ESCALA] pois o impacto é grande e cross times e torres da dafiti.
+
+Já outros exemplos como do API Gateway, foi necessário mais um esforço no contexto de [ADVERSIDADE] pois existiu uma resistência tênue dos engenheiros de sre que não dominavam a tecnologia e não queriam deixar usar a solução. Foi necessário um esforço extra, tanto para aprender para poder ensinar, qunato mostrar as melhorias com métricas de cloudwatch, prometeus e grafana na solução dos problemas de comunicação usando a ferramenta como intermediadora.
+
+As atividades recentes referentes à gitops, helm charts, cluster kubernetes, estão sendo desafioadores no contexto de [COMPLEXIDADE TÉCNICA] pois essas tecnologias eu não conhecia, e estou estudando elas para poder agregar valor na experiência dos desenvolvedores da Dafiti, para trazer padrões e automações que viabilizam uma experiência melhor no dia-a-dia da engenharia da Dafiti
 ___
 
 ## Coding Excellence: Apoio a melhoria do código de outras pessoas colaboradoras, fornecendo feedback por meio de revisões de código
 
 ### L3
 
+- [2021 Dafiti customer-api]
+  - Auxiliei o time de customer para conceber/configurar o start do projeto junto ao Eduardo Judici, passando conhecimento sobre a stack de nodejs. Também fiz acomanhamento do ramp da evolução do time no aprendizado de boas práticas no desenvolvimento para poder contemplar pipeline agnostica, padrão de liveness/readiness para k8s. Para k8s também foi passado o conhecimento sobre finetuning de pods utilizando como ferramenta o instana para companhar os gráficos de consumo de recursos de cpu/mem.
+- [2022 Dafiti carmen]
+  - Auxiliei time de wallet para migração da aplicação carmen web e api para container. Minha participação nesse movimento foi de intrutor para o Michel Vivaldini instruindo em como construir a Dockerfile, criar os deployments no repositório de gitops (argo), e revisão dos códigos no github, sempre apontando pontos de melhorias do código como escrita de logs em stdout, padrão de log em json, pipeline agnostica à stack usando docker-compose.
+- [2022 Dafiti new app]
+  - Auxiliei time de new app para criação dos dashboards no grafana para monitoria dos microserviços do novo app.
 ### L4
 
 ___
@@ -206,8 +229,21 @@ ___
 
 ### L3
 
+- [2019 Dafiti mobile-api]
+  - Fiz o discovery do processo de CI/CD da API, pois não havia mais ninguém na Dafiti que conhecia os processos de delivery da mesma. Após o rediscovery, foi identificados pontos de melhoria da aplicação para que a pipeline fosse migrada da ferramenta desenvolvida em casa da Dafiti para CircleCI
+- [2020 Dafiti]
+  - Fiz a reestruturação dos deploys dos microserviços do ecosistema de PWA, para utlizar CircleCI e gitops, tirando da ferramenta feita em casa da Dafiti Py_Deployer, utilizando as melhores práticas do mercado. os microserviços migrados foram:
+    - discovery-venus
+    - discovery-mars
+    - ms-cms
+    - ms-catalog
+  - Fiz refactor de toda pipeline e steps de deploy da aplicação CORE de catálogo da Dafiti, a catalog-search. O refactor consistil de, remover a stack de go da pipeline, transformando os passos da pipeline agnostica à stack, utilizando docker-compose e boas práticas de Docker, criando uma imagem muitl-estágios com responsabilidades distintas e definidas, migrando configurações via arquivo `.env` para variáveis de ambiente do container no deployment.
 ### L4
-
+- [2022 Dafiti DevXP]
+  - [ESCALA] Desenhei novo fluxo de trabalho para toda compania, chamado de `branch strategy` onde o principal objetivo é deixar as pipelines padronizadas por meio de um ORB da CircleCI que funciona como um sitema de template de pipelines. O branch strategy consite de separar passos de pipelines adequados para cada fase de desenvolvimento, onde não irá ocorrer execuções desnecessárias gastando créditos da pipeline por falta de planejamento. O padrão consite da nomenclaruta de branchs hotfix release feature, onde:
+    - hotfix é a branch que passa por todos os passos da pipeline até chegar com o artefato (registry, package) em homologação ou stage passando por testes unitários, scans DAST SAST, build de artefato, deploy em ambiente de dev, espera interação humana para avançar o artefato para homolog. Ao fechar a PR da hotfix na main, o artefato de homolog é promovido para live
+    - release é a branch principal que representa uma história ou épico do JIRA, onde é criada a partir da main, ela não aceita comits direto, toda interação é realizada via Pull Requests de suas branchs filhas features, que são a representação das subtasks do JIRA. a branch de feature usa apenas os passos de testes e scans, que são utilizados como gates de qualidade na PR para release, e assim que fechado uma PR para release, a mesma inicia os passos de geração do artefato (registry ou package) para ser instalado no primeiro ambiente (dev ou qa), que fica esperando interação humana para promover para (homolog ou stage) para testes de fumaça. Uma vez fechada a PR da release na main, o artefato de homolog é promovido para live.
+  Esse processo diminui em 60% o tempo de uso dos runners e time to market pois não é passado por todas as etapas na pipeline para entregas em live.
 ___
 
 ## Continuous Delivery: Defino ou customizo a estratégia de versionamento de código adequada ao meu contexto, e a utilizo corretamente
