@@ -125,7 +125,6 @@ Essa habilidade foi aprimorada em muitos projetos que atuei em minha carreira e 
 - [2022 fevereiro CI&T Cliente Dafiti servidores de Mencached]
   - Investigação relacionada à falhas constantes nos servidores de memcache que perdiam dados e tiravam a loja, parcialmente, do ar. O problema foi identificado analizando as configurações de ingraestrutura dos servidores, que estavam usando mapeamento de DNS de forma errada para multiplos servidores, ao invés de usar o serviço de NLB(network load balancer). Após diagnosticado, a atuação foi repassar todas as configurações das máquinas EC2, definindo DNS, tirando confiugração de IPs chumbados no código, e redirecionando as aplicações de consulta, para passarem a usar o NLB. O problema foi solucionado e até o momento estamos sem mais incidentes com esse componente.
 
-
 ### L4
 
 A habilidade de investigar problemas e solucioná-los está sempre vinculada com algum tipo de complexidade, e nos exemplos que eu citei não é diferente!
@@ -193,15 +192,16 @@ ___
 No meu histórico de atuação do cliente atual, faço POCs para resolver todos os problemas, entre elas, algumas viraram soluções reais como
 
 - Package golang, nodejs e PHP de health-check que nasceram de forma singela para aliviar uma dor por falta de padrões, e hoje são packages publicados oficialmente na comunidade
-  - https://github.com/gritzkoo/nodejs-health-checker
-  - https://github.com/gritzkoo/php-health-checker
-  - https://github.com/gritzkoo/golang-health-checker
-  - https://github.com/gritzkoo/golang-health-checker-lw
+  - <https://github.com/gritzkoo/nodejs-health-checker>
+  - <https://github.com/gritzkoo/php-health-checker>
+  - <https://github.com/gritzkoo/golang-health-checker>
+  - <https://github.com/gritzkoo/golang-health-checker-lw>
 - POC de estudos de AWS APIGATEWAY que virou solução de BF 2020 Dafiti que segurou audiência do catálogo da loja!
 - POC de estudos de gitops que está sendo utilizada de guidelines para branch estrategy, organização dos argo cds e nomenclaturas gerais de deployments na atuação do time atual. Esses guidelines estão sendo usados para estruturação da documetação técnica de onboarding do time de engenharia e de sre. Abaixo a lista dos repositórios usados como POCS e a minha certificação de gitops fundamentals para consolidar o conhecimento no contexto.
-  - https://github.com/gritzkoo/gitops
-  - https://github.com/gritzkoo/helm-charts
-  - https://github.com/gritzkoo/argo-class/blob/main/instalando-argocd.md
+  - <https://github.com/gritzkoo/gitops>
+  - <https://github.com/gritzkoo/helm-charts>
+  - <https://github.com/gritzkoo/argo-class/blob/main/instalando-argocd.md>
+
 ### L4
 
 Como as POCS citadas no L3 foram largamente utilizadas na Dafiti trazendo uma grande mudança nos processos de desenvolvimento (atual e em progresso), as ações se caracterizam no contexto de [ESCALA] pois o impacto é grande e cross times e torres da dafiti.
@@ -221,6 +221,7 @@ ___
   - Auxiliei time de wallet para migração da aplicação carmen web e api para container. Minha participação nesse movimento foi de intrutor para o Michel Vivaldini instruindo em como construir a Dockerfile, criar os deployments no repositório de gitops (argo), e revisão dos códigos no github, sempre apontando pontos de melhorias do código como escrita de logs em stdout, padrão de log em json, pipeline agnostica à stack usando docker-compose.
 - [2022 Dafiti new app]
   - Auxiliei time de new app para criação dos dashboards no grafana para monitoria dos microserviços do novo app.
+
 ### L4
 
 ___
@@ -238,28 +239,56 @@ ___
     - ms-cms
     - ms-catalog
   - Fiz refactor de toda pipeline e steps de deploy da aplicação CORE de catálogo da Dafiti, a catalog-search. O refactor consistil de, remover a stack de go da pipeline, transformando os passos da pipeline agnostica à stack, utilizando docker-compose e boas práticas de Docker, criando uma imagem muitl-estágios com responsabilidades distintas e definidas, migrando configurações via arquivo `.env` para variáveis de ambiente do container no deployment.
+
 ### L4
+
 - [2022 Dafiti DevXP]
   - [ESCALA] Desenhei novo fluxo de trabalho para toda compania, chamado de `branch strategy` onde o principal objetivo é deixar as pipelines padronizadas por meio de um ORB da CircleCI que funciona como um sitema de template de pipelines. O branch strategy consite de separar passos de pipelines adequados para cada fase de desenvolvimento, onde não irá ocorrer execuções desnecessárias gastando créditos da pipeline por falta de planejamento. O padrão consite da nomenclaruta de branchs hotfix release feature, onde:
     - hotfix é a branch que passa por todos os passos da pipeline até chegar com o artefato (registry, package) em homologação ou stage passando por testes unitários, scans DAST SAST, build de artefato, deploy em ambiente de dev, espera interação humana para avançar o artefato para homolog. Ao fechar a PR da hotfix na main, o artefato de homolog é promovido para live
     - release é a branch principal que representa uma história ou épico do JIRA, onde é criada a partir da main, ela não aceita comits direto, toda interação é realizada via Pull Requests de suas branchs filhas features, que são a representação das subtasks do JIRA. a branch de feature usa apenas os passos de testes e scans, que são utilizados como gates de qualidade na PR para release, e assim que fechado uma PR para release, a mesma inicia os passos de geração do artefato (registry ou package) para ser instalado no primeiro ambiente (dev ou qa), que fica esperando interação humana para promover para (homolog ou stage) para testes de fumaça. Uma vez fechada a PR da release na main, o artefato de homolog é promovido para live.
   Esse processo diminui em 60% o tempo de uso dos runners e time to market pois não é passado por todas as etapas na pipeline para entregas em live.
+
 ___
 
 ## Continuous Delivery: Defino ou customizo a estratégia de versionamento de código adequada ao meu contexto, e a utilizo corretamente
 
 ### L3
 
+Fui o protagonista da padronização de N pipelines de projetos cross com objetivo de definir para compania Dafiti Group, o modelo mais adequado de versionamento de código para microserviços que são deployados em EKS.
+
+Para projetos que não são do tipo package, o versionamento dos artefatos usa os 7 primeiros dígitos do hash do commit, para evitar que fique poluido o repositório no GitHub com infundadas tags e semantic versioning erradas apenas do "porque sim" de entregas de apps que não faz sentido usar semantic.
+
+Para repositórios que são do tipo PACKAGE, desenhei e padronizei a pipeline para execução de testes e publicação automática no gerenciador interno NEXUS da Dafiti para stack de node, NPM.
+
+Documentei os processos, no Confluense, para que novos desenvolvedors saibam os passos necessários para criar novos packages e dar manutenção nos atuais sem maiores problemas.
+
 ### L4
 
+No contexto de estratégia de versionamento, fui o protagonista da escrita do CIRCLECI-ORB da dafiti <https://circleci.com/developer/orbs/orb/dafiti-group/orb-standard-pipeline> onde foi estruturado todas as melhores práticas de versionamento de código de forma organizada para poder replicar a mesma estratégia para toda Dafiti.
+Com o Orb, foi lançada uma iniciativa de modernização de todas as aplicações da dafiti para o uso do mesmo, sendo assim, acredito que essa iniciativa se enquadra em [ESCALA] na régua de 7x7
 ___
 
 ## Continuous Delivery: Defino e automatizo o pipeline de entrega adequado para o meu contexto, e garanto que o time o utilize corretamente
 
 ### L3
 
+Tenho proficiência em 2 tecnologias de pipelines, Github Actions e Circleci.
+Para meus projetos pessoais que são packages de código aberto na comunidade, uso a pipeline Github Actions como nos links de exemplo abaixo:
+
+- <https://github.com/gritzkoo/nodejs-health-checker/blob/master/.github/workflows/main.yml>
+- <https://github.com/gritzkoo/golang-health-checker/blob/master/.github/workflows/main.yaml>
+- <https://github.com/gritzkoo/golang-health-checker-lw/blob/main/.github/workflows/test.yaml>
+- <https://github.com/gritzkoo/php-health-checker/blob/main/.github/workflows/test.yml>
+
+Todas usam padrão de execução de testes com coverage que é enviado para o `coveralls.io` para geração dos badges de quality-gates dos packages
+
+Já para CircleCI, eu adquiri o `known-how` na Dafiti nos últimos 3 anos, e venho aprimorando à cada novo desafio.
+Entre os exemplos de pipelines mais relevantes, tenho um histórico de protagonismo em ajudar a criar os padrões da Dafiti, ao invés de apenas usá-los.
+Os projetos mais conceituados e cross eu eu ajudei a padronizar a pipeline, e modernização, é os componentes BOB ALICE MOBILE-API MOBILE-CHECKOUT-API CATALOG-SEARCH CATALOG-FRONT, a maioria deles eram EC2 e foram midradas para k8s.
+
 ### L4
 
+Acredito que como a padronização da Dafiti como um todo como meio do CircleCI ORB seja um exemplo de L4, pois é uma ação que padroniza para toda corporação os padrões de pipeline, e junto com a documentação no confluense, é uma metodologia adequada para garantir que todos da corporação utilizem desse novo paradigma!
 ___
 
 ## Continuous Delivery: Automatizo o provisionamento de ambientes através de ferramentas
@@ -274,6 +303,12 @@ ___
 
 ### L3
 
+Tenho proficiencia em geração de dashboards com APM instana e Grafana.
+Nos projetos que eu vivi na dafiti, como mobile-api mobile-checkout-api, alice, sofia, customer-api, entre outros, todos receberam padronização de health-checks para montar os dashboards de monitoria de alertas no Grafana. Embora no ZABIXX não tenha cido eu especificadamente que criei os alertas, foi a partir da padronização dos logs que eu fiz nas aplicações citadas anteriormente que viabilizou a criação dos alertas.
+
+O dashboard de maior peso que eu fiz para dafiti foi o de monitoria de chaves do memcache da aplicação mobile-api, que é a fonte de dados para todos os troubleshootings envolvendo esse componente.
+
+Outro dashboard que foi muito utilizado, foi o do catalog-search que criou visualizações de tráfego por loja/país, com status de cache hit/miss das configurações do API-GATEWAY da aws
 ### L4
 
 ___
