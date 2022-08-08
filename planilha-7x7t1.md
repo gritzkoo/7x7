@@ -317,6 +317,12 @@ ___
 
 ### L3
 
+- [MobileAPI]
+  - Na migração de ferramenta de consulta de catálogo de SOLR para DATAJET, implementei a solução de forma estruturada para que somente com FEATURE-TOOGLE fosse possível utilizar o novo modelo de catálogo dos APPs. Também nos testes foi utilizado estrutura de Mocks para testar todo módulo de catálogo e garantir transparência para virada da implementação. No delivery, acompanhei com o time de business a virada do tipo canary do catálogo, usando a feature-toogle no firebase dos applicativos, liverando de forma gradativa o novo catálogo.
+- [Sofia catalog-front]
+  - Na migração de EC2 para EKS, além de modernizar vários items da aplicação, foi utilizado modelo BLUE/GREEN para virada do tráfego em ambiente produtivo
+- [Catalog Serarch]
+  - Nesse microserviço, que era exclusivamente de finding no tempo que estive por lá, migrei a forma de desenvolvimento para TRUNK BASED DEVELOPMENT para conseguir fazer entregas mais confiáveis e rápidas, eliminando as branchs acumulativas, deixando mais limpo o histórico no github da solução.
 ### L4
 
 ___
