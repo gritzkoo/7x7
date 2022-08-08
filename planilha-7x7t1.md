@@ -331,6 +331,16 @@ ___
 
 ### L3
 
+- [Meus projetos OpenSource de health-checks]
+  - Utilizo da estratégia de TDD nos meus packages de health-check para garantir que toda nova versão, todos os critérios de qualidade sejam seguidos garantindo uma entrega saudável e segura nas stacks de PHP NODE GOLANG
+- [Mobile-API]
+  - Na migração do módulo de catálogo, utilizei TDD para garantir que sempre que novos ajustes sejam feitos no catálogo da API, todos os cenários de testes deem cobertura suficiente para dar segurança para novos desenvolvedores que hoje fazem manutenção no módulo. Os testes unitários é passo obrigatório na Pipeline e é utilizado como quality-gate para habilitar merge button na PR
+- [Mobile-checkout-api]
+  - Fui o protagonista na migração da versão de php de 5.5 para 7.3, e nessa virada, foi necessário reescrever toda base de testes unitários da API migrando phpunit da versão 2.9 para 8.5. Durante a fase de refactor dos testes, reescrevi boa parte dos mesmo para que mocks gatantissem as respostas das integrações externas de forma correta e garantir integridade dos testes e removi testes que estavam na base do código sem motivo ou inválidos
+- [Alice]
+  - Na implemnetação do módulo de feeds integrado com datajet, escrevi testes unitários utilizando padrão TDD e MOCS para garantir que as entregas dessa funcionaliade tivessem um alto nível de confiabilidade
+- [PWA]
+  - Integração com feeds foi precursora da implementação de testes usando JEST e providers de testes escrevendo testes com todos senários possíveis garantindo qualidade na entrega do módulo. Embora hoje esse projeto tenha sido descontinuado pelo cliente, serviu de base de conhecimento para implemnetação do mesmo paradígma em outros projetos utlizando a stack de NODE
 ### L4
 
 ___
