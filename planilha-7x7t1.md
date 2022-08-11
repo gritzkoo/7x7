@@ -349,6 +349,9 @@ ___
 
 ### L3
 
+Fui protagonista na iniciativa de finetuning da mobile-api, para utilizar ferramentas de testes automatizados como Gatling e Vegeta, para simular teste de stress, para poder pegar metricas de consumo de CPU e MEM, usando Newrelic ou Instana APM, dos pods em K8S, para ajustar os recursos do deployment para melhorar o tempo de resposta e o consumo de recurso do cluster.
+Meu conhecimento foi lapidado nessa iniciativa, e com o conhecimento adquirido, consegui realizar em outras aplicações do cliente, como catalog-search, catalog-front, alice, bob, ms-catalog, ms-cms, discovery-venus, entre outras.
+Hoje sou considerado tanto pela equipe de dev quando pela equipe de sre, uma referência no quesito finetunning, e estou envolvido em muitas iniciativas de SRE ajudando a planejar e executar tarefas de melhorias contínuas nos ajustes das aplicações.
 ### L4
 
 ___
