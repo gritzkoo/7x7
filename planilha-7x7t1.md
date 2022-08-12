@@ -340,7 +340,7 @@ ___
 - [Alice]
   - Na implemnetação do módulo de feeds integrado com datajet, escrevi testes unitários utilizando padrão TDD e MOCS para garantir que as entregas dessa funcionaliade tivessem um alto nível de confiabilidade
 - [PWA]
-  - Integração com feeds foi precursora da implementação de testes usando JEST e providers de testes escrevendo testes com todos senários possíveis garantindo qualidade na entrega do módulo. Embora hoje esse projeto tenha sido descontinuado pelo cliente, serviu de base de conhecimento para implemnetação do mesmo paradígma em outros projetos utlizando a stack de NODE
+  - Integração com feeds foi precursora da implementação de testes usando JEST e providers de testes escrevendo todos senários possíveis garantindo qualidade na entrega do módulo. Embora hoje esse projeto tenha sido descontinuado pelo cliente, serviu de base de conhecimento para implemnetação do mesmo paradígma em outros projetos utlizando a stack de NODE
 ### L4
 
 ___
@@ -359,6 +359,11 @@ ___
 ## Quality: Participo e/ou lidero o assunto qualidade no meu escopo através de governança dos processos
 
 ### L3
+
+Atualmente no cliente, sou considerado uma referência no quesito de governança de processos de qualidade. 
+
+Os principais processos ao qual fui protagonista, o que mais se destaca foi a implementação de um sonarqube padronizado, que antes estava segmentado em mais de uma instância e não era todos os projetos que estavam sendo gerenciados, para um novo e centralizado, criando um template padrão de pipeline, que da ferramenta de circleci se chama ORB, e escrevi a documentação técnica de como fazer o ingresso de qualquer projeto, seja novo ou legado, para a utilização desse processo.
+Também sou o protagonista da padronização dos health checks de 3 stacks, PHP NODE GOLANG e estou constantemente acompanhando o time de engenharia para manter esse padrão, fazendo apresentações explicando a importancia desse processo.
 
 ### L4
 
