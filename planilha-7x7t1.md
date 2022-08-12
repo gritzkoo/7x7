@@ -373,6 +373,14 @@ ___
 
 ### L3
 
+Na iniciativa de ingresso de SSC para utilização da API catalog-search, fazendo a virada de catálodo de solr para datajet, fui o protagonista em criar dashboards no grafana, para servir de metricas de índice de erros e tempos de respostas, e com esses dados, fiz os alinhamentos de expectativas entre time Brasil, Argentina, Colombia e Chile, para definir qual seria os critérios de acetie do índice de falha e SLA da API. Com as métricas foi possível fazer a migração da API do cluster Brasil para um compartilhado com SSC e com isso, identificamos problemas de comunicação entre regiões da AWS deixando a aplicação fora dos padrões estabelecidos com o time SSC. Com a inclusão de um API GATEWAY, foi possível não somente corrigir o problema do SLA da API como também viabilizar muitas outras métricas, por meio do CLOUD-WATCH, que por meio deste, foi possível fazer uma ação conjunta com time da Alemanhã Datajet, para fazer troubleshooting de rede e ajustar as configurações de VPC PEARING entre clusters e melhorar o tempo de resposta da API, deixando abaixo de 300ms. Nessa iniciativa as métricas dos dashboards eram cruciais e serviram como parâmetros de entrega de qualidade na iniciativa.
+
+Na minha atuação no time de finding, utilizei métricas extraídas do Google GMT e Google Analítics para ajudar na tomada de decisão junto a P.O da época (Drielli) para validar as hipóteses de melhorias no catálogo, e junto aos indicadores, eu era o protagonista para mapear as ações junto com o time para realização dos ajustes e melhorias necessários para atingir as metas necessárias de negócio.
+
+Para meus packages publicados na comunidade, de padronização de health-check escritos em PHP NODE GOLANG, utilizo code coverage junto ao COVERALLS.IO para servir de quality-gate das pipelines de automação para garantir 100% de coverage dos packages.
+
+Embora eu tenha sido um protagonista na Dafiti na implementação do servidor sonarqube, padronização das pipelines de muitros projetos, ainda essa iniciativa não está contemplando o code coverage sendo gerenciado pelo sonarqube, mas estou puxando esse tópico em meu time de DevXP para inclusão da padronização de como extrair coverage de forma agnostica na pipeline e usá-los como parâmetro de quality-gate para servir de travas nas PRs do Github e dar mais visibilidade dos problemas que as aplicações da Datifi tem atualmente. Como o parque de aplicações é composto quase na totalidade por aplicações obsoletas e legados, optei por não incluir esse íncide na abordagem inicial do sonarqube para não travar toda engenharia e passar, inicialmente um extrato do cenário atual de muitas aplicações.
+
 ### L4
 
 ___
