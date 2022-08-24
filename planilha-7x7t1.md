@@ -389,6 +389,12 @@ ___
 
 ### L3
 
+- [2019 mobile-api]
+  - Planejei testes da API para contemplar todo o processo de compras no APP da Dafiti, e escrevi o senário em GATLING para virar um teste de stress da estrutura, para servir de insumo para ajustes da infraestrutura para realizar ajustes necessários para conseguir aguentar a audiência da BlackFriday. Com as telemetrias geradas com os testes, nas ferramentas de observabilidade da época [newrelic, grafana, kibana], foi possivel ajustar o tamanho do pool de conexões do php-fpm, tamanho de recursos dos pods tanto de memória quanto de cpu, e com esses ajustes, foi possível passar a BF sem downtime da estrutura
+- [2020 catalog-search]
+  - Para viabilizar testes que simulassem uma navegação organica para teste de stress da estrutura, estudei o uso da ferramenta https://github.com/tsenart/vegeta (vegeta) e com os logs da API, que foi resgatado da ferramenta de log kibana da época, foi possível contruir uma massa de 200k querys únicas que simulavam a navegação no catálogo da loja, e junto com a automação dos testes, usando argo workflows, foi possível definir o amanho da autiência e tempo dos testes. Os resultados eram apresentados por tempo de respostas e status code, e com os dados coletados das ferramentas de observabilidade [newrelic graylog, grafana], foi possível fazer ajustes no deployment do kubernetes de HPA e melhorar o tempo de autoscaling da aplicação e durante a BF 2022 não teve downtime do componente
+
+Embora meu conhecimento em testes abrangem desde testes unitários e até testes de stress automatizados, atualmente não estou usando mais esse conhecimento, pois minha atuação no cliente não está direatamente ligada às iniciativas que demandem esse tipo de atuação.
 ### L4
 
 ___
