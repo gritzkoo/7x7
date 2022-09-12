@@ -414,7 +414,21 @@ ___
 
 ### L3
 
+Estou no cliente Dafiti à 3 anos e meio, e nesse período, conquistei o título de referência, junto aos times, no quesito de desenhos de arquitetura.
+Com esse histórico, eu tive a oportunidade em 2021, em participar do time, que na época se chamava `new app` hoje App Platform, em ajudar a mapear todos os ajustes necessário nos microserviços da Dafiti, para atender as especificações para o novo app. As atividades consistiram em mapear toda a estrutura dos microserviços, usando modelo C4-Model, para criar uma visão abrangente dos problemas relacionados ao backend do cliente, e ajudar pessoas não técnicas compreenderem o "estado da arte" que se encontrava.
+Nessa iniciativa, foi constatado que várias partes do ecosistema da loja esta duplicado, como checkout, sessão, carrinho, e para atingir uma arquitetura centralizada, com domínios bem definidos, e diminuir o time-to-market, fui o protagonista, junto ao gerente William Lopes, em criar e definir um roadmap, junto a todas as torres da dafiti, das ações necessárias para correção, refatoração ou reescrita de microserviços, de todas as torres.
+Com o desenho das dores dos times, e as métricas, tanto de turn-over quanto de tempo de loja fora do ar, foram o combustível que mateve a iniciativa atraente, tanto para engenharia, quanto para negócio, porém, todo C-Level da Dafiti "desertou" e com a chegada de uma nova gerência, a força da iniciativa se exauriu, e somente agora, no terceiro quadrimestre, que os gerentes atuais estão dando a vez, para as atividades mapeadas do passado.
+
 ### L4
+
+Em atuações cross, ajudei a planejas a melhor entrega de microserviços para as iniciativas de:
+  - customer-api
+    - incentivei time a rampar na tecnologia de nodejs, pois a stack melhor se enquadrava no desafio, ajudei o time a fazer o primeiro contato com typescript
+  - Dafiti-ADS
+    - Desenhei e validei melhor alternativa de inclusão de fluxo alternativo de inclusão de analitics da ferramenta desenvolvida pela dafiti, fazendo a implementação base tanto na catalog-searh e mobile-api para rampar time inesperiênte em ambas stacks (php golang) para entregar com melhor qualidade a iniciativa
+  - appex-catalog
+    - Fiz a documentação técnica de unificação de contratos de todos os endpoits das 4 APIS dafiti (brasil e ssc) montando o racional de unificação cross-country, essa documentação servil de diretriz para fazer a implementação tanto no flutter quanto no BFF que serve esse conteúdo para o novo APP
+Assim entendeno uma atuação mais cross se enquadrando no quesito [ESCALA] e [COMPLEXIDADE TÉCNICA]
 
 ___
 
