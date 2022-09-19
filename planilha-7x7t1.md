@@ -448,6 +448,12 @@ ___
 
 ### L3
 
+- [Backstage]
+  - Sou o protagonista da iniciativa backstage na Dafiti que é a plataforma de padrões e centralizador de conhecimento sobre as aplicações. A iniciativa consite em disponibilizar para o time de engenharia, uma interface web para criação de novos microserviços, em golang até o momento, para diminuir a burocracia de criação de novos serviços. O processo de criar um novo microserviço no cliente era oneroso e levava de 3 à 8 dias para conseguir todos os ítens, e com a automação do processo, esse tempo baixou para 15min. No template também está garantido padrões de engenharia como log no padrão JSON, observabilidade pronta no instana e padrão de health-check.
+- [Docker Docker-compose]
+  - Desenvolvi e documentei processo de criação de pipelines agnósticas a tecnologias deixando igual as piplines do cliente. O padrão consiste em deixar no arquivo Dockerfile, a inteligência da stack e a pipeline apenas invoca o Docker para realizar as ações necessárias. Para garantir a adesão, fiz uma apresentação para os gestores e junto às apresentações técnicas, fiz a apresentação para engenharia dos benefícios dessa metodologia. Já na documentação no Confluense, está catalogado como padrão de engenharia, e é critério de aceite tanto o padrão na Dockerfile/docker-compose quanto a pipeline agnóstica.
+- [ORB]
+  - Fui protagonista em centralizar toda a lógica de pipelines em um template para ser importado nos projetos, para garantir homogeneidade para todas as aplicações. O ORB faz parte da iniciativa de padrões, que é feita pelo meu time de DevXP, e ele garante tanto que, testes e análises sejam passados de forma padrão, quanto notificações e automações de deployment sigam as boas práticas definidas.
 ### L4
 
 ___
