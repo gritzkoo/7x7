@@ -22,10 +22,10 @@ ___
 Embora muito se prega em utilizar-se de [design-patterns] como [SOLID, DDD, TDD, STRATEGY, etc], todos tem o objetivo de padronizar e organizar projetos, embora pessoalmente não os sigo à risca, pois teoria e prática nem sempre andam juntas. Eu os uso como base de norteamento e os uso da forma que melhor resolve cada problema.
 
 - [2016-2017 - luxfacta Projeto Modulação fabril]
-  Atuei como lider de projeto e arquiteto. Criei front-end reativo usando MVVM e FACTORY com libjs knowkout-js. Já no backend, usando framework LARAVEL, foi utilizado padrão misto de DDD com MVC
+  Atuei como líder de projeto e arquiteto. Criei front-end reativo usando MVVM e FACTORY com libjs knowkout-js. Já no backend, usando framework LARAVEL, foi utilizado padrão misto de DDD com MVC
 
 - [2017-2018 - Luxfacta Projeto Interactionlog]
-  Também atuando como lider técnico e arquiteto, fiz migração do projeto legado para usar MVVM com FACTORY no front-end, refactor do back-end para usar DDD FACTORY MVC
+  Também atuando como líder técnico e arquiteto, fiz migração do projeto legado para usar MVVM com FACTORY no front-end, refactor do back-end para usar DDD FACTORY MVC
 
 - [2019-2020 Dextra Projeto Mobile-api]
   Fui responsável por fazer refactor mecanismo de pesquisa usando FACTORY DDD, também fiz refactor e update da aplicação para evoluir de PHP 5.5 para 7.3 reescrevendo boa parte dos testes unitários migrando PHP-Unit de 3.5 para 8.9.
@@ -556,7 +556,8 @@ ___
 ## Teamwork: Dou feedback de forma efetiva (com exemplos) aos membros do time, dando visibilidade dessa ação aos líderes
 
 ### L3
-
+"Com todos ao qual eu tenho contato, faço feedbacks regulares e sempre que uma conduta esteja fora de contexto, estou constantemente avisando meu supervisor direto, tanto para alinhamento quanto para direcionamento.
+Principalmente com meus mentorados (agora CA) acompanho de perto o cotidiando dando direcionamentos para alinhamento de cultura e expectativas tanto do cliente quanto CI&T"
 ### L4
 
 ___
@@ -580,7 +581,21 @@ ___
 ## Teamwork: Contagio todo o time pelo exemplo e postura ao encarar desafios de forma positiva fazendo-os enxergar as eventuais oportunidades
 
 ### L3
+"Constantemente elogiado pelo cliente, estou sempre usando as oportunidades para diceminar conhecimento e mostrar novas possibilidades e oportunidades para o time de engenharia em como resolver os problemas do cliente usando outras tecnologias, como golang nodets .
+No time de engenharia estou sempre recebendo feedbacks positivos sobre minha posição junto aos desafios!
+Alguns exemplos retirados do forms de feedback 360.
 
+- As principais características que visualizo são voltadas a parte técnica, onde representa um importante papel sendo líder técnico para muitos, servindo como referencia para diversas frentes tecnológicas, sempre ajudando o próximo e contribuindo de forma CROSS para resolução de problemas principalmente voltadas a arquitetura, o qual demonstra ter bastante conhecimento e aprimorando cada vez mais, evolução gigantesca nos últimos meses principalmente quando o assunto é doker, kubernetes, aws, terraform, charts, microserviços, etc. Sendo muito elogiado pelo cliente e todo o time de engenharia, servindo como referencia para as muitas mudanças que estão sendo aplicadas na arquitetura atual, trazendo inovações, padronizações e melhorias nos sistemas como um todo.
+
+- Grande conhecimento e experiências técnicas, perfil de ""professor"" na hora de ajudar/ensinar algo, consegue explicar muito bem as coisas. Nas discussões tenta sempre manter a conversa com foco no que é necessário, e sempre argumenta fortemente contra caminhos errados.
+
+- ""Você é obcecado por excelência, trabalha para resolver definitivamente os problemas e gosta de ajudar as pessoas a atingirem este resultado.
+Alguns exemplos:
+Fez com que o Docker-dafiti funcionasse corretamente com documentação completa
+Refez várias esteiras de CI/CD melhorando a qualidade e reduzindo em até 70% o tempo
+Ajudou a resolver vários problemas de codificação/monitoração no BOB/Alice
+Refatorou a mobile-api para deixa-la estável e auto escalável.""
+"
 ### L4
 
 ___
@@ -588,7 +603,10 @@ ___
 ## Teamwork: Incentivo, através do exemplo, revisões técnicas (ex: Solution Review) canalizando a experiência coletiva na produção de uma nova solução de melhor qualidade
 
 ### L3
-
+"Participo e incentivo as revisões de código, sempre puxando boas prátias de todos!
+feedback google-forms:
+- Todas as vezes que precisei de um review de PR, apresentou boas praticas de codificação.
+- Sempre estudando e aplicando boas praticas de desenvolvimento, inclusive de segurança, a parte de clean code e testes, fazendo code review caso seja necessário em algo que possa ser melhorado"
 ### L4
 
 ___
@@ -596,7 +614,7 @@ ___
 ## Teamwork: Compartilho conhecimentos regularmente em canais apropriados aumentando o conhecimento do time, área ou comunidade
 
 ### L3
-
+Estou constantemente participando de eventos da Dafiti gravando vídeos com explicações de como funciona as aplicações da Dafiti, criando um ambiente colaborativo para compartilhamento de conhecimento.
 ### L4
 
 ___
@@ -604,7 +622,7 @@ ___
 ## Soft skills: Comunico de forma efetiva e negocio propostas e soluções técnicas com o cliente
 
 ### L3
-
+Estou sempre envolvido com o cliente para ajudar nas soluções técnicas sendo uma grande referência cross quando o assunto é ajudar outros times na resolução de problemas, trazendo propostas e soluções em conjunto com o time de engenharia e desenvolvimento, sabendo adaptar a linguagem de acordo com o interlocutor.
 ### L4
 
 ___
@@ -612,7 +630,8 @@ ___
 ## Soft skills: Entrego de forma consistente tarefas sob minha responsabilidade sendo reconhecido como alguém que se pode contar
 
 ### L3
-
+"O cliente constantemente solicita minha participação em ações de impacto por ter muita confiança na qualidade das minhas entregas.
+Sou constantemente solicitado para acompanhar warroons para poder passar confiança para os times de suporte."
 ### L4
 
 ___
@@ -620,7 +639,9 @@ ___
 ## Soft skills: Me comunico de forma eficaz e escalo qualquer tipo de necessidade em tempo hábil evitando que ocorram crises no projeto
 
 ### L3
-
+Sempre que encontro problemas que possam causar problemas tanto para o cliente, ou para CI&T, escalo para as partes interessadas sobre o assunto.
+Recentemente, fui o interlocutor/mediador, dos problemas relacionados à cultúra com o cliente CATHO com o colaborador Phelipe Maglio, auxiliando os passos para alinhamentos, onde foi necessário uma intervenção de nível superior para que o problema de cultura do cliente fosse sanado.
+Com cliente Dafiti, estou constantemente comunicando, principalmente com João Paulo e Marcos Borin, problemas de jestão Dafiti e procurando sempre uma ação em conjunto para solucioná-las.
 ### L4
 
 ___
@@ -628,7 +649,8 @@ ___
 ## Soft skills: Construo e mantenho credibilidade com o cliente, time e liderança
 
 ### L3
-
+Minha postura com cliente, time e liderança sempre foi com papel de ser considerado como "ponte" para que haja entendimento entre partes técnicas e não técnicas.
+Em feedbacks da época da Dextra, e até mesmo agora na CI&T, sou constantemente requisitado para ser "mentor/CA" no quesito comunicação.
 ### L4
 
 ___
@@ -636,7 +658,8 @@ ___
 ## Soft skills: Crio e mantenho um relacionamento com o cliente, sendo visto e colocando a CI&T como referência
 
 ### L3
-
+Hoje sou considerado uma referência tanto do cliente Dafiti -> CI&T quanto CI&T -> Dafiti, como interlocutor de assuntos relacionados a equipes e desafios.
+Na transição de renovação do contrato CI&T, participei da equipe de estratégias relacionada à nova distribuição de equipes e também como pivô de comunicados com área de gerência Dafiti para alinhamentos de espectativas para ambas as partes.
 ### L4
 
 ___
@@ -644,5 +667,7 @@ ___
 ## Soft skills: Viabilizo e estimulo o time a participar de iniciativas corporativas, mobilizando dentro da área de atuação condizente com meu nível
 
 ### L3
-
+Participo ativamente nos fóruns do meu contexto puxando vários outros colaboradores para criar um ambiente colaborativo co-participativo, trazendo mais segurança para área de gestão e para devs.
+- Ponto mais recente foi o troubleshooting de memcache onde todo time de SRE Dafiti foi envolvido e conseguimos trazer resultados em conjunto, onde fui uma peça de integração de comunicação entre conhecimento do cliente vs hardskill para compartilhar com os engenheiros.
+- Criação e integração Nexus do contexto de Sales Dafiti, trazendo a ponte de conheicmento de criação de packages e reestruturação com segurança de aplicações, promovendo comunicação entre área de gestão e engenharia, adaptando o discurso de acordo com os interlocutores.
 ### L4
