@@ -216,7 +216,7 @@ ___
 ### L3
 
 - [2021 Dafiti customer-api]
-  - Auxiliei o time de customer para conceber/configurar o start do projeto junto ao Eduardo Judici, passando conhecimento sobre a stack de nodejs. Também fiz acomanhamento do ramp da evolução do time no aprendizado de boas práticas no desenvolvimento para poder contemplar pipeline agnostica, padrão de liveness/readiness para k8s. Para k8s também foi passado o conhecimento sobre finetuning de pods utilizando como ferramenta o instana para companhar os gráficos de consumo de recursos de cpu/mem.
+  - Auxiliei o time de customer para conceber/configurar o start do projeto junto ao Eduardo Judici, passando conhecimento sobre a stack de nodejs. Também fiz acomanhamento do ramp da evolução do time no aprendizado de boas práticas no desenvolvimento para poder contémplar pipeline agnostica, padrão de liveness/readiness para k8s. Para k8s também foi passado o conhecimento sobre finetuning de pods utilizando como ferramenta o instana para companhar os gráficos de consumo de recursos de cpu/mem.
 - [2022 Dafiti carmen]
   - Auxiliei time de wallet para migração da aplicação carmen web e api para container. Minha participação nesse movimento foi de intrutor para o Michel Vivaldini instruindo em como construir a Dockerfile, criar os deployments no repositório de gitops (argo), e revisão dos códigos no github, sempre apontando pontos de melhorias do código como escrita de logs em stdout, padrão de log em json, pipeline agnostica à stack usando docker-compose.
 - [2022 Dafiti new app]
@@ -379,7 +379,7 @@ Na minha atuação no time de finding, utilizei métricas extraídas do Google G
 
 Para meus packages publicados na comunidade, de padronização de health-check escritos em PHP NODE GOLANG, utilizo code coverage junto ao COVERALLS.IO para servir de quality-gate das pipelines de automação para garantir 100% de coverage dos packages.
 
-Embora eu tenha sido um protagonista na Dafiti na implementação do servidor sonarqube, padronização das pipelines de muitros projetos, ainda essa iniciativa não está contemplando o code coverage sendo gerenciado pelo sonarqube, mas estou puxando esse tópico em meu time de DevXP para inclusão da padronização de como extrair coverage de forma agnostica na pipeline e usá-los como parâmetro de quality-gate para servir de travas nas PRs do Github e dar mais visibilidade dos problemas que as aplicações da Datifi tem atualmente. Como o parque de aplicações é composto quase na totalidade por aplicações obsoletas e legados, optei por não incluir esse íncide na abordagem inicial do sonarqube para não travar toda engenharia e passar, inicialmente um extrato do cenário atual de muitas aplicações.
+Embora eu tenha sido um protagonista na Dafiti na implementação do servidor sonarqube, padronização das pipelines de muitros projetos, ainda essa iniciativa não está contémplando o code coverage sendo gerenciado pelo sonarqube, mas estou puxando esse tópico em meu time de DevXP para inclusão da padronização de como extrair coverage de forma agnostica na pipeline e usá-los como parâmetro de quality-gate para servir de travas nas PRs do Github e dar mais visibilidade dos problemas que as aplicações da Datifi tem atualmente. Como o parque de aplicações é composto quase na totalidade por aplicações obsoletas e legados, optei por não incluir esse íncide na abordagem inicial do sonarqube para não travar toda engenharia e passar, inicialmente um extrato do cenário atual de muitas aplicações.
 
 ### L4
 
@@ -390,7 +390,7 @@ ___
 ### L3
 
 - [2019 mobile-api]
-  - Planejei testes da API para contemplar todo o processo de compras no APP da Dafiti, e escrevi o senário em GATLING para virar um teste de stress da estrutura, para servir de insumo para ajustes da infraestrutura para realizar ajustes necessários para conseguir aguentar a audiência da BlackFriday. Com as telemetrias geradas com os testes, nas ferramentas de observabilidade da época [newrelic, grafana, kibana], foi possivel ajustar o tamanho do pool de conexões do php-fpm, tamanho de recursos dos pods tanto de memória quanto de cpu, e com esses ajustes, foi possível passar a BF sem downtime da estrutura
+  - Planejei testes da API para contémplar todo o processo de compras no APP da Dafiti, e escrevi o senário em GATLING para virar um teste de stress da estrutura, para servir de insumo para ajustes da infraestrutura para realizar ajustes necessários para conseguir aguentar a audiência da BlackFriday. Com as telemetrias geradas com os testes, nas ferramentas de observabilidade da época [newrelic, grafana, kibana], foi possivel ajustar o tamanho do pool de conexões do php-fpm, tamanho de recursos dos pods tanto de memória quanto de cpu, e com esses ajustes, foi possível passar a BF sem downtime da estrutura
 - [2020 catalog-search]
   - Para viabilizar testes que simulassem uma navegação organica para teste de stress da estrutura, estudei o uso da ferramenta https://github.com/tsenart/vegeta (vegeta) e com os logs da API, que foi resgatado da ferramenta de log kibana da época, foi possível contruir uma massa de 200k querys únicas que simulavam a navegação no catálogo da loja, e junto com a automação dos testes, usando argo workflows, foi possível definir o amanho da autiência e tempo dos testes. Os resultados eram apresentados por tempo de respostas e status code, e com os dados coletados das ferramentas de observabilidade [newrelic graylog, grafana], foi possível fazer ajustes no deployment do kubernetes de HPA e melhorar o tempo de autoscaling da aplicação e durante a BF 2022 não teve downtime do componente
 
@@ -471,11 +471,11 @@ ___
 - [mobile-api]
   - Meu primeiro projeto com cliente Dafiti, o desafio era fazer um re-discovery do projeto pois não havia mais ninguem presente na Dafiti que sabia como o mesmo funcionava, e não tinha nehum tipo de documentação. Meu background solido em PHP ajudou a levantar todos os dados mais relevantes do projeto e montar uma estratégia de atualização tecnológica, que na época foi migrar a versão do PHP de 5.5 para 7.3. Junto ao desafio de trocar o mecanismo de pesquisa da loja nos apps Android e IOS, fiz o gerenciamento dos riscos com os stakeholders e montei a estratégia de entregas faseadas da iniciativa. No processo, fiz o ramp de um dev Jr (Jaqueline Botaro) para nivelar o conhecimento da API e formar sucessores, ao qual me substituiu quando fui remanejado para o contexto de finding.
 - [Finding-team]
-  - Momento da carreira dentro da Dafiti onde lapidei meu conhecimento pleno do fluxo de catálogo, virei referência no cliente no quesito "pesquisas e atributos", fui responsável por fazer vários tipos de ritos de passagem de conhecimento, onde formei diversos substitutos. Por meio de pairprogramming e grommings, realizava constantemente atividades em grupo com o time para gerar conhecimento compartilhado, uma das melhores fases de compartilhamento de conhecimento que tive! Pessoas de destaque do contexto foram (Otoniel, Guilherme Dakuzaku, Phelipe Maglio)
+  - Momento da carreira dentro da Dafiti onde lapidei meu conhecimento pleno do fluxo de catálogo, virei referência no cliente no quesito "pesquisas e atributos", fui responsável por fazer vários tipos de ritos de passagem de conhecimento, onde formei diversos substitutos. Por meio de pairprogramming e grommings, realizava constantemente atividades em grupo com o time para gerar conhecimento compartilhado, uma das melhores fases que tive! Pessoas de destaque do contexto foram Otoniel, Guilherme Dakuzaku, Phelipe Maglio
 - [New APP]
-  - Usufruindo do meu domínio adquirido no time de finding, fui o protagonista em um dos maiores levantamentos de tarefas técnicas no cliente para viabilização de um novo app, mapeando todos os débitos da plataforma, em conjunto com o Willian Lopes, montando plano de atualização tecnológia de vários componentes, e sunset de apis duplicadas da plataforma. Infelizmente, a iniciativa foi engavetada, pois os gestores sairam da Dafiti, e os que os substituiram não compatilhavam da mesma visão.
+  - Usufruindo do meu domínio adquirido no time de finding, fui o protagonista em um dos maiores levantamentos de tarefas técnicas no cliente para viabilização de um novo app, mapeando todos os débitos da plataforma, em conjunto com o Willian Lopes, montando plano de atualização tecnológica de vários componentes, e sunset de apis duplicadas da plataforma. Infelizmente, a iniciativa foi engavetada, pois os gestores sairam da Dafiti, e seus substitutos não compatilhavam da mesma visão.
 - [DevXP]
-  - Sou referencia técnica do time sendo protagonista em N iniciativas de melhorias da plataforma do cliente como um todo. Principal participante da `Chapter de arquitetura` (Reunião para exibição de novos desenvolvimentos), o cliente tem altas expectativas que minha participação e conhecimento da plataforma como um todo seja compartilhada  o máximo possível para formar sucessores.
+  - Sou referência técnica do time sendo protagonista em N iniciativas de melhorias da plataforma do cliente como um todo. Principal participante da `Chapter de arquitetura` (Reunião para exibição de novos desenvolvimentos), o cliente tem altas expectativas que minha participação e conhecimento da plataforma como um todo seja compartilhada  o máximo possível para formar sucessores.
 
 ### L4
 
@@ -493,6 +493,15 @@ ___
 
 ### L3
 
+- [mobile-api]
+  - Durante a faze de re-discovery da aplicação, vários pontos de acomplamento foram mapeados e incluidos no roadmape, tornando os débitos técnicos em tarefas obrigatórias de refactor com testes de integração para garantir que o mesmo comportamento da API seria entregue depois das melhorias
+- [catalog-search]
+  - Projeto em Golang que continha código não agnóstico a ambiente, foi mapeado vários pontos de refactor para transformar o código agnóstico ao ambiente e a uso de variáveis de ambiente, transformando o artefado Docker registry agnóstico ao ambiente. As atividades de refactor foram incorporadas as iniciativas com alinhamentos constantes com a P.O
+- [DevXP]
+  - Na iniciativa de padronização da Dafiti com uso do backstage, os templates de código golang visão trazer uma cultura desafiadora para os desenvolvedores a aprender uma tecnologia nova já com padrões esperados pela engenharia como: Padrão de logs em JSON em stdout, padrão de health-check, padrão de pipeline com passos bem definidos, inclusão de documentação da API em swagger para importação no dashboard do backstage, centralizando em um único lugar todas as informações das applicações para facilitar o troubleshooting em casos de erros.
+  - Iniciativa de padronização do setup dos cluster, foi identificado problemas de certificação do domínio privado, onde a ROOT_CA de qa era divergente de live, um alinhamento foi feito com time de sec/sre para reestruturar o issuer padrão do domínio privado.
+  - Iniciativa de de padronização dos cluster, a evolução das apps para redução de custos, pois os deploys estavam subindo 2 load-balancers por app, e uma abordagem de usar o istio, usando apenas 2 load-balancers por cluster, e diminuir complexidade ténica, toil, e viabilizar a automação de ingresso de novas aplicações. Foi montado um backlog técnico em conjunto com o os times de sre para atualização das apps, unificação da taxonomia dos domínios públicos, privados de qa e live.
+
 ### L4
 
 ___
@@ -501,7 +510,33 @@ ___
 
 ### L3
 
+Meu time/iniciativa de DevXP tem como principal objetivo a modernização da Dafiti como um todo. Nossas principais entregas de modernização foram:
+
+- Uso do `cert-manager` nos clusters para emissão e gerenciamento de certificados públicos e privados de forma autônoma, usando let's crypt para DNS público e Vault Hashcorp para privado
+- Uso do istio para redução de custos com AWS e automação de publicação de novos microserviços sem necessidade de emissão de certificados manuais e setup manual no R53
+- Observabilidade melhorada com Kiali e Jagger
+- Recuperação de ambiente (DR Disaster Recovery) implementando `argocd-autopilot` para bootstrap dos clusters (em evolução)
+- Padronização das pipelines usando ORB (template de CircleCI)
+- Definição da estratégia de desenvolvimento (branch strategy) com documentação disponível no Confluense para ingresso dos times de forma orgânica
+- Automação da instalação do ferramental padrão em todos os clusters, com a criação de um helm chart privado, que contém todas as definições de segurança e qualidade de sec/sre
+  
+Já para modernização tecnológica dos microserviços, disponibilizamos um template em golang, o qual está sendo bem aceito pelos times de engenharia, pois está 100% automatizado do início ao fim, desde a criação do repositório, até o deploy nos ambientes de qa/live. Como o processo de startup de novas iniciativas foi facilitado, agora os times acreditam que aprender a nova stack irá trazer mais qualidade no produto final.
+Também estamos trabalhando na entrega automatizada de serverless AWS Lambda nas stacks de javascript e golang para incentivar, cada vez mais, o uso de novas arquiteturas em novas iniciativas.
+
 ### L4
+
+Fui o protagonista que incentivou todo time de DevXP em realizar as certificações das ferramentas de modernização do cliente, tais como:
+
+- ArgoCD e seus conceitos utilizando a plataforma Code-Fresh https://learning.codefresh.io/start
+  - [GitOps Fundamentals] Learn the basics of GitOps with ArgoCD and Argo Rollouts. (completo)
+  - [GitOps at scale] Learn sound strategies for managing applications and version deployments across multiple environments (em progresso)
+- Hashicorp Vault https://www.hashicorp.com/certification/vault-associate
+  - Gestão de segredos (em progresso)
+  - Gestão de certificados PKI (em progresso)
+  - Gestão de regras de acesso (em progresso)
+- Istio  https://academy.solo.io/get-started-with-istio (em progresso)
+
+Utilizando o conhecimento das certificações, eu como lider do time de DevXP, venho realizando constantemente reuniões com os gestores para explicar o momento da Dafiti nos componentes que não estão dentro da normalidade, incentivando os demais integrantes de SRE a aprender também com essas certicações gratuitas, para melhorar o entendimento das ferramentas e a gestão das mesmas.
 
 ___
 
