@@ -551,9 +551,7 @@ Das iniciativas mais significativas para o cliente, o PCI 2021 provavelmente foi
 
 Dentre minhas atuações, estou constantemente obervando as iniciativas cross, na espectativa de encontrar pontos de colisão de interesse, ou mesmo falta de alinhamento entre as frentes, para evitar que dois times realizem a mesma tarefa, ou que a tarefa de uma iniciativa não atrabalhe ou vá contra outra.
 
-Entre os exemplos mais recentes foi, durante uma beweekly, onde nosso agilista Italo estava apresentando seu trabalho de mapeamento de backlog do time de SRE, imediatamente percebi que havia tarefas de outras frentes de SRE que impactavam diretamente DevXP (meu time). Fui o protagonista em promover a comunicação entre os gerentes e coordenadores para que pudessemos fazer um alinhamento de expectativas. A iniciativa foi replanejada com sucesso, e segue abaixo o feedback do Italo:
-
-- Durante as reuniões com o time, Gritzko sempre é muito participativo e consegue expor sua opinião de forma bastante assertiva. A comunicação é objetiva, mas também feita de uma forma que não gera conflitos desnecessários.
+Entre os exemplos mais recentes foi, durante uma beweekly, onde nosso agilista Italo estava apresentando seu trabalho de mapeamento de backlog do time de SRE, imediatamente percebi que havia tarefas de outras frentes de SRE que impactavam diretamente DevXP (meu time). Fui o protagonista em promover a comunicação entre os gerentes e coordenadores para que pudessemos fazer um alinhamento de expectativas. A iniciativa foi replanejada com sucesso, e segue abaixo o feedback do Italo: '- Durante as reuniões com o time, Gritzko sempre é muito participativo e consegue expor sua opinião de forma bastante assertiva. A comunicação é objetiva, mas também feita de uma forma que não gera conflitos desnecessários.'
 
 ___
 
@@ -561,6 +559,9 @@ ___
 
 ### L3
 
+Do meu histórico como desenvolvedor, o momento/time onde tive a oportunidade de amadurecer e por em pratica o uso de métricas como ferramenta de criação de iniciativas foi enquanto estava no time de Finding da Dafiti. La aprendi usar ferramentas como Google Analitcs, usando o padadigma de testes A/B para auxiliar as tomadas de decisões do escopo de catálogo da loja. 
+Junto à esse conhecimento e seu mind-set, fui o protagonista da criação de diversos tipos de boards no grafana, para ter um dashboard específico de finding para medir a "temperatura" de nossa solução, para acompanhar a evolução das entregas vs a taxa de crescimento da conversão.
+Infelizmente minha atuação já à algum tempo, não é mais em times de entregas de features e o uso das métricas hoje são o norte nas tomadas de decisão relacionadas ao universo de DevOps, e melhorias em performance e custos com Aws.
 ### L4
 
 ___
