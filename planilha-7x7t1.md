@@ -544,7 +544,16 @@ ___
 
 ### L3
 
+Tenho um histórico sólido no cliente sempre puxando a comunicação entre times e iniciativas, sendo usado como referência no auxilio dos alinhamentos, tanto técnicos quanto de negócio, ajudando os times a montarem a estratégia de entrega das iniciativas visando a melhor qualidade, gerenciando expectativas e backlog.
+Das iniciativas mais significativas para o cliente, o PCI 2021 provavelmente foi o que agregou maior visibilidade no cliente da minha capacidade de ajudar a montar backlog, e gerenciar conhecimento para entregas de qualidade, onde o conhecimento era baixo em muitos componentes da plataforma, os desenvolvedores não tinham um convívio grande com os processos do cliente, e tanto time quanto cliente estavam com uma expectativa muito alta para a entrega dos itens mapeados pela auditoria ao qual precisavam ser corrigidas. O projeto CCCP, que é escrito em scala foi o item que mais gerou desconforto com os devs, embora eu também não conhecia a stack, fiz uma breve imerção online para aprender rapidamente o paradigma, e ajudar o time a fazer a entrega dos itens, melhoranto tanto a moral do time, quanto o nível de segurança dos gestores.
+
 ### L4
+
+Dentre minhas atuações, estou constantemente obervando as iniciativas cross, na espectativa de encontrar pontos de colisão de interesse, ou mesmo falta de alinhamento entre as frentes, para evitar que dois times realizem a mesma tarefa, ou que a tarefa de uma iniciativa não atrabalhe ou vá contra outra.
+
+Entre os exemplos mais recentes foi, durante uma beweekly, onde nosso agilista Italo estava apresentando seu trabalho de mapeamento de backlog do time de SRE, imediatamente percebi que havia tarefas de outras frentes de SRE que impactavam diretamente DevXP (meu time). Fui o protagonista em promover a comunicação entre os gerentes e coordenadores para que pudessemos fazer um alinhamento de expectativas. A iniciativa foi replanejada com sucesso, e segue abaixo o feedback do Italo:
+
+- Durante as reuniões com o time, Gritzko sempre é muito participativo e consegue expor sua opinião de forma bastante assertiva. A comunicação é objetiva, mas também feita de uma forma que não gera conflitos desnecessários.
 
 ___
 
