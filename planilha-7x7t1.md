@@ -632,21 +632,21 @@ ___
 ## Teamwork: Contagio todo o time pelo exemplo e postura ao encarar desafios de forma positiva fazendo-os enxergar as eventuais oportunidades
 
 ### L3
-"Constantemente elogiado pelo cliente, estou sempre usando as oportunidades para diceminar conhecimento e mostrar novas possibilidades e oportunidades para o time de engenharia em como resolver os problemas do cliente usando outras tecnologias, como golang nodets .
+Constantemente elogiado pelo cliente, estou sempre usando as oportunidades para diceminar conhecimento e mostrar novas possibilidades e oportunidades para o time de engenharia em como resolver os problemas do cliente usando outras tecnologias, como golang nodets .
 No time de engenharia estou sempre recebendo feedbacks positivos sobre minha posição junto aos desafios!
 Alguns exemplos retirados do forms de feedback 360.
 
-- As principais características que visualizo são voltadas a parte técnica, onde representa um importante papel sendo líder técnico para muitos, servindo como referencia para diversas frentes tecnológicas, sempre ajudando o próximo e contribuindo de forma CROSS para resolução de problemas principalmente voltadas a arquitetura, o qual demonstra ter bastante conhecimento e aprimorando cada vez mais, evolução gigantesca nos últimos meses principalmente quando o assunto é doker, kubernetes, aws, terraform, charts, microserviços, etc. Sendo muito elogiado pelo cliente e todo o time de engenharia, servindo como referencia para as muitas mudanças que estão sendo aplicadas na arquitetura atual, trazendo inovações, padronizações e melhorias nos sistemas como um todo.
+- [Eduardo Judici [Dev. Senior]] As principais características que visualizo são voltadas a parte técnica, onde representa um importante papel sendo líder técnico para muitos, servindo como referencia para diversas frentes tecnológicas, sempre ajudando o próximo e contribuindo de forma CROSS para resolução de problemas principalmente voltadas a arquitetura, o qual demonstra ter bastante conhecimento e aprimorando cada vez mais, evolução gigantesca nos últimos meses principalmente quando o assunto é doker, kubernetes, aws, terraform, charts, microserviços, etc. Sendo muito elogiado pelo cliente e todo o time de engenharia, servindo como referencia para as muitas mudanças que estão sendo aplicadas na arquitetura atual, trazendo inovações, padronizações e melhorias nos sistemas como um todo.
 
-- Grande conhecimento e experiências técnicas, perfil de ""professor"" na hora de ajudar/ensinar algo, consegue explicar muito bem as coisas. Nas discussões tenta sempre manter a conversa com foco no que é necessário, e sempre argumenta fortemente contra caminhos errados.
+- [Michael Vivaldini [ Dev. Pleno]]Grande conhecimento e experiências técnicas, perfil de ""professor"" na hora de ajudar/ensinar algo, consegue explicar muito bem as coisas. Nas discussões tenta sempre manter a conversa com foco no que é necessário, e sempre argumenta fortemente contra caminhos errados.
 
-- ""Você é obcecado por excelência, trabalha para resolver definitivamente os problemas e gosta de ajudar as pessoas a atingirem este resultado.
+- [William Lopes [Gerente Sênior Dafiti]] Você é obcecado por excelência, trabalha para resolver definitivamente os problemas e gosta de ajudar as pessoas a atingirem este resultado.
 Alguns exemplos:
 Fez com que o Docker-dafiti funcionasse corretamente com documentação completa
 Refez várias esteiras de CI/CD melhorando a qualidade e reduzindo em até 70% o tempo
 Ajudou a resolver vários problemas de codificação/monitoração no BOB/Alice
-Refatorou a mobile-api para deixa-la estável e auto escalável.""
-"
+Refatorou a mobile-api para deixa-la estável e auto escalável.
+
 ### L4
 
 ___
