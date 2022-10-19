@@ -567,8 +567,24 @@ ___
 Do meu histórico como desenvolvedor, o momento/time onde tive a oportunidade de amadurecer e por em pratica o uso de métricas como ferramenta de criação de iniciativas foi enquanto estava no time de Finding da Dafiti. La aprendi usar ferramentas como Google Analitcs, usando o padadigma de testes A/B para auxiliar as tomadas de decisões do escopo de catálogo da loja. 
 Junto à esse conhecimento e seu mind-set, fui o protagonista da criação de diversos tipos de boards no grafana, para ter um dashboard específico de finding para medir a "temperatura" de nossa solução, para acompanhar a evolução das entregas vs a taxa de crescimento da conversão.
 No histórico das tomadas de decisão o maior exemplo que posso aqui compartilhar é de que, ao incluir uma funcionalidade de catálogo personalizado por cliente, fui o protagonista em levantar o custo/impacto na loja sobre performance e cache, uma vez que todas as estratégias vigentes iriam parar de funcionar. Inicialmente, o PO estava bem resistivo a aceitar que, o delta entre o ganho em vendas e o aumento de custo da plataforma somados ao aumento do tempo de resposta das telas de catálogo, poderiam não fechar positivamente a conta. Embora mais do que explicado, a feature entrou de forma não otimizada/planejada com outros times por senso de pressa do PO o que acarretou em grandes perdas na taxa de conversão de vendas somadas ao custo. A saida dessa iniciativa foi desativar via toggle a funcionalidade, e realizar de forma organizada, a programação dos envolvidos na época (AKAMAI AWS SRE Datajet) sobre o crescimento de requisições no parque e o preparo adequado na infra para suportar tal feature.
-Infelizmente minha atuação já à algum tempo, não é mais em times de entregas de features e o uso das métricas hoje são o norte nas tomadas de decisão relacionadas ao universo de DevOps, e melhorias em performance e custos com Aws.
+Infelizmente minha atuação, já a algum tempo, não é mais em times de entregas de features e o uso das métricas hoje são o norte nas tomadas de decisão relacionadas ao universo de DevOps, e melhorias em performance e custos com AWS.
+
 ### L4
+
+Das melhorias mais impactantes que fui protagonista no cliente, a redução do tempo de execução das pipelines, deixando-as mais eficiêntes melhorando os processos de execução, e a redução de tempo necessário para criação de novas aplicações de backend.
+A baixo um feedback do gerente da torre, que exalta exatamente esses pontos.
+
+- [Willian Lopes [Gerente Sênior]] `"Você é obcecado por excelência, trabalha para resolver definitivamente os problemas e gosta de ajudar as pessoas a atingirem este resultado.
+  Alguns exemplos:
+  Fez com que o Docker-dafiti funcionasse corretamente com documentação completa
+  Refez várias esteiras de CI/CD melhorando a qualidade e reduzindo em até 70% o tempo
+  Ajudou a resolver vários problemas de codificação/monitoração no BOB/Alice
+  Refatorou a mobile-api para deixa-la estável e auto escalável."`
+
+Já a iniciativa do BACKSTAGE, reduziu o tempo de criação de uma nova aplicação e publicação com ambientes de produção e qualidade, de meses pra minutos, e para atingir esse objetivo, foi necessário arrumar/reconstruir alguns processos internos, como por exemplo:
+  - Emissão de certificados dinamicamente: O processo estava manual e dependia do time de SRE/SEC para criação e setup dos ALBs, agora usando ISTIO como router do cluster e cert-manager, foi possível automatizar o processo, e deixar transparente nas aplicações a gestão de DNS e Certificados
+  - Ajustes no helm chart para publicação: Como o processo antigo dependia da criação de um ALB para cada deployment e setup manual, com a inclusão do Virtual-Service do ISTIO, além de diminuir a complexidade do preenchimento do helm, possibilitou a criação de um template agnostico para ser aplicável para qualquer aplicação
+  - Padronização dos endpoints de health checks: Agora com a documentação e os packages para instalar nos microserviços, ficou mais simples configurar os liveness e readiness probes dando possibilidade de transformar em um template agnóstico
 
 ___
 
