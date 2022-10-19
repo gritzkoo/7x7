@@ -272,23 +272,28 @@ ___
 
 ### L3
 
-Tenho proficiência em 2 tecnologias de pipelines, Github Actions e Circleci.
-Para meus projetos pessoais que são packages de código aberto na comunidade, uso a pipeline Github Actions como nos links de exemplo abaixo:
+Tenho proficiência em 2 tecnologias de pipelines, Github Actions e Circleci. Para meus projetos pessoais que são packages de código aberto na comunidade, uso a pipeline Github Actions, e no cliente Dafiti uso majoritariamente CircleCi.
+Abaixo um pouco mais de informações distribuidas no tempo sobre os conhecimentos adquiridos:
 
-- <https://github.com/gritzkoo/nodejs-health-checker/blob/master/.github/workflows/main.yml>
-- <https://github.com/gritzkoo/golang-health-checker/blob/master/.github/workflows/main.yaml>
-- <https://github.com/gritzkoo/golang-health-checker-lw/blob/main/.github/workflows/test.yaml>
-- <https://github.com/gritzkoo/php-health-checker/blob/main/.github/workflows/test.yml>
-
-Todas usam padrão de execução de testes com coverage que é enviado para o `coveralls.io` para geração dos badges de quality-gates dos packages
-
-Já para CircleCI, eu adquiri o `known-how` na Dafiti nos últimos 3 anos, e venho aprimorando à cada novo desafio.
-Entre os exemplos de pipelines mais relevantes, tenho um histórico de protagonismo em ajudar a criar os padrões da Dafiti, ao invés de apenas usá-los.
-Os projetos mais conceituados e cross eu eu ajudei a padronizar a pipeline, e modernização, é os componentes BOB ALICE MOBILE-API MOBILE-CHECKOUT-API CATALOG-SEARCH CATALOG-FRONT, a maioria deles eram EC2 e foram midradas para k8s.
+- [2019 Dafiti]
+  - [mobile-api] Primeiro contato com pipelines do Circleci, fui coadjuvante no processo de migração da API, onde aprendi os conceitos e tive a oportunidade de auxiliar na estruturação dos passos de forma otimizada para a stack de PHP ao qual o responsável não o tinha, e juntos montamos o padrão de deploy de aplicações PHP para as pipelines da Dafiti.
+- [2020 Dafiti] 
+  - [catalog-front] Fui protagonista em converter a aplicação que rodava em EC2 para K8S, migrando configurações para environments, padronizando logs no padrão JSON e escrita em sdtout, reestruturando instalação de dependências privadas da dafiti usando TOKEN ao invés de chaves ssh de desenvolvedores injetada na pipeline, padronização de layers na Dockerfile e serviços no docker-compose para viabilizar uma pipeline agnostica.
+  - [catalog-search] Fui protagonista em utilizar os padrões de engenharia, ao qual eu ajudei a desenvolver e documentar no cliente sobre padrões de Dockerfile e pipelie, e implementar nessa API golang, provando que o conseito era aplicavel à qualquer stack, e a estratégia de tirar a stack da pipeline, e transferir o ônus de setups para Dockerfile, e não para pipeline era, além de viável, uma forma de padronização para qualquer aplicação.
+  - [discovery-mars, discovery-venus, ms-catalog, ms-cms] Fui o protagonista de padronizar suas piplines usando as mesmas técnicas nos exemplos acima e no processo, responsáveis de cada microserviço participou do processo, para transferência de conhecimento, para disseminar a metodologia com toda engenharia
+- [2020 projetos pessoais OpenSource]
+  - [nodejs-health-checker] Onde lapidei meus conseitos já adquiridos no cliente, usando outra ferramenta de mercado, o Github Actions, para automatizar a entrega dos pacotes do package que hoje também é um padrão de engenharia utilizado pelo cliente
+  - [golang-health-checker] Onde consolidei meu aprendizado na stack de golang, e aprimorei ainda mais a skill de utilizar Github Actions para entregar novas versões do pacote de forma automatizada na comunidade.
+- [2021 Dafiti]
+  - [Alice] Removendo dados sensíveis da pipeline, e colocando no padrão de outras aplicações para instalação de segredos, e reestruturação da forma do deploy e instalação de dependencias usando TOKEN removendo chaves de desenvolvedores da pipiline, ao qual, constantemente estava gerando falha nos processos de deploy, quando os colaboradores eram desligados da coorporação no Github.
+  - [Bob] Fui o responsável por migrar a pipeline para CIrcleci do maior componente do cliente, ao qual estava em CI/CD, e o processo de entrega que demorava em torno de 40min foi reduzido para 8min e com total autonomia para time de engenharia conseguir realizar as entregas sem processo que envolvia times de N1 e governança.
+  - [External-shop] Outro exemplo de aplicação migrada do CI/CD feito em casa da dafiti e migrado para os padrões de deploy utilizando CodeDeploy da aws e CircleCi
+  - [freith-api] Outro projeto que passou por resstruturação e adequação da pipline ao qual fui o protagonista em aplicar todos os conseitos de boas práticas documentadas no cliente e converter o deploy para CircleCI
 
 ### L4
 
-Acredito que como a padronização da Dafiti como um todo como meio do CircleCI ORB seja um exemplo de L4, pois é uma ação que padroniza para toda corporação os padrões de pipeline, e junto com a documentação no confluense, é uma metodologia adequada para garantir que todos da corporação utilizem desse novo paradigma!
+- [ESCALA][COMPLEXIDADE TÉCNICA]
+  -  Com meu histórico de protagonismo no cliente, sou reconhecido como a maior referência dos padrões de pipelines, sendo hoje integrante do time que é owner de todas as pipelines, e minha missão é trazer a Dafiti para uma nova página na história, trazendo os mais recentes padrões, para todas as aplicações, sejam novas ou legadas. Com essa posição de prestigio e a oportunidade, fui o protagonista em aprender como criar ORBS do CircleCi, para que, ao invés de apenas copiar uma pipeline para outro projeto, escrever uma base única de código que é compartilhável e instalável nas pipelines, e utlilzar de forma mais otimizada as pipelines possibilitando que, por meio de versionamento usando `semantic-versioning` do orb, o processo de atualização das estratégias de pipelines sejam mais transparentes para todas as aplicações, e mais simples o processo para o time de engenharia. <https://circleci.com/developer/orbs/orb/dafiti-group/orb-standard-pipeline>
 ___
 
 ## Continuous Delivery: Automatizo o provisionamento de ambientes através de ferramentas
