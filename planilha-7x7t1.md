@@ -49,7 +49,7 @@ Embora muito se prega em utilizar-se de [design-patterns] como [SOLID, DDD, TDD,
 - [2020~presente]
   - [ESCALA]
     - Criei uma aplicação template na Dafiti escrita em GOLANG para padronizar tanto o padrão de pipeline agnóstica, quando padrão de imagem Docker multi-layer com camadas com responsabilidades únicas para viabilizar uma chamada de CI apenas na pipeline. Esse projeto também padroniza a estrutura básica de deployment usando helm com gfg-application-web chart da dafiti, padroniza também resposta de health-check. Esse template também é utilizado como guide-line para outras stacks na geração de novos projetos de template e documentação dos processos de criação de novas aplicações na Dafiti.
-    - Jutno à migração do SOFIA, o padrão madurecido nessa iniciativa é utilizado em vários outros projetos seguindo os mesmos guide-lines de padrão de [pipeline, docker, docker-compose, helm]. Esses padrões hoje estão documentados no cliente no Confluense para iniciar novas APPS
+    - Jutno à migração do SOFIA, o padrão madurecido nessa iniciativa é utilizado em vários outros projetos seguindo os mesmos guide-lines de padrão de [pipeline, docker, docker-compose, helm]. Esses padrões hoje estão documentados no cliente no Confluence para iniciar novas APPS
 
 ___
 
@@ -260,7 +260,7 @@ Para projetos que não são do tipo package, o versionamento dos artefatos usa o
 
 Para repositórios que são do tipo PACKAGE, desenhei e padronizei a pipeline para execução de testes e publicação automática no gerenciador interno NEXUS da Dafiti para stack de node, NPM.
 
-Documentei os processos, no Confluense, para que novos desenvolvedors saibam os passos necessários para criar novos packages e dar manutenção nos atuais sem maiores problemas.
+Documentei os processos, no Confluence, para que novos desenvolvedors saibam os passos necessários para criar novos packages e dar manutenção nos atuais sem maiores problemas.
 
 ### L4
 
@@ -456,7 +456,7 @@ ___
 - [Backstage]
   - Sou o protagonista da iniciativa backstage na Dafiti que é a plataforma de padrões e centralizador de conhecimento sobre as aplicações. A iniciativa consite em disponibilizar para o time de engenharia, uma interface web para criação de novos microserviços, em golang até o momento, para diminuir a burocracia de criação de novos serviços. O processo de criar um novo microserviço no cliente era oneroso e levava de 3 à 8 dias para conseguir todos os ítens, e com a automação do processo, esse tempo baixou para 15min. No template também está garantido padrões de engenharia como log no padrão JSON, observabilidade pronta no instana e padrão de health-check.
 - [Docker Docker-compose]
-  - Desenvolvi e documentei processo de criação de pipelines agnósticas a tecnologias deixando igual as piplines do cliente. O padrão consiste em deixar no arquivo Dockerfile, a inteligência da stack e a pipeline apenas invoca o Docker para realizar as ações necessárias. Para garantir a adesão, fiz uma apresentação para os gestores e junto às apresentações técnicas, fiz a apresentação para engenharia dos benefícios dessa metodologia. Já na documentação no Confluense, está catalogado como padrão de engenharia, e é critério de aceite tanto o padrão na Dockerfile/docker-compose quanto a pipeline agnóstica.
+  - Desenvolvi e documentei processo de criação de pipelines agnósticas a tecnologias deixando igual as piplines do cliente. O padrão consiste em deixar no arquivo Dockerfile, a inteligência da stack e a pipeline apenas invoca o Docker para realizar as ações necessárias. Para garantir a adesão, fiz uma apresentação para os gestores e junto às apresentações técnicas, fiz a apresentação para engenharia dos benefícios dessa metodologia. Já na documentação no Confluence, está catalogado como padrão de engenharia, e é critério de aceite tanto o padrão na Dockerfile/docker-compose quanto a pipeline agnóstica.
 - [ORB]
   - Fui protagonista em centralizar toda a lógica de pipelines em um template para ser importado nos projetos, para garantir homogeneidade para todas as aplicações. O ORB faz parte da iniciativa de padrões, que é feita pelo meu time de DevXP, e ele garante tanto que, testes e análises sejam passados de forma padrão, quanto notificações e automações de deployment sigam as boas práticas definidas.
 ### L4
@@ -522,7 +522,7 @@ Meu time/iniciativa de DevXP tem como principal objetivo a modernização da Daf
 - Observabilidade melhorada com Kiali e Jagger
 - Recuperação de ambiente (DR Disaster Recovery) implementando `argocd-autopilot` para bootstrap dos clusters (em evolução)
 - Padronização das pipelines usando ORB (template de CircleCI)
-- Definição da estratégia de desenvolvimento (branch strategy) com documentação disponível no Confluense para ingresso dos times de forma orgânica
+- Definição da estratégia de desenvolvimento (branch strategy) com documentação disponível no Confluence para ingresso dos times de forma orgânica
 - Automação da instalação do ferramental padrão em todos os clusters, com a criação de um helm chart privado, que contém todas as definições de segurança e qualidade de sec/sre
   
 Já para modernização tecnológica dos microserviços, disponibilizamos um template em golang, o qual está sendo bem aceito pelos times de engenharia, pois está 100% automatizado do início ao fim, desde a criação do repositório, até o deploy nos ambientes de qa/live. Como o processo de startup de novas iniciativas foi facilitado, agora os times acreditam que aprender a nova stack irá trazer mais qualidade no produto final.
