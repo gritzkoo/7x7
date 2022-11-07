@@ -618,8 +618,12 @@ ___
 
 ### L3
 
+Meu contato com a ferramenta JIRA aconteceu somente quando entrei na Dextra em 2019, e desde lá, em conjunto com os times de agilidade da época, aprendi e entendi o real propósito da ferramente, e como ela é importante para dar visibilidade tanto para times, quanto para stakeholders do progresso e definições de atividades.
+No primeiro desafio ao entrar na Dafiti, participei do processo de reformulação dos boards, para criar novos issue types, e montar fluxo de execução das tarefas, e foi nessa iniciativa onde amadureci meus conhecimentos na ferramenta e nos indicadores que ela viabiliza.
+O modelo criado para o time de APPs se tornou referência em toda Dafiti, e por todos os contextos que eu passei, sempre utilizo os exemplos e configurações para ajustar os boards.
+Hoje, em DevXP, mesmo sem o convívio com agilistas, coordenadores e gerentes, consigo manter os imputs na ferramente de forma a atender as expectativas da gestão, e recentemente nosso agilista Italog Brilhante mostrou por meio de graficos extraídos de nosso board, que a atuação do time todo esta em complience com o esperado.
 ### L4
-
+N/A
 ___
 
 ## Process: Monitoro, priorizo e alimento o backlog ajudando o time a ter conhecimento claro das próximas tarefas, técnicas ou não
@@ -627,15 +631,15 @@ ___
 ### L3
 
 ### L4
-
+N/A
 ___
 
 ## Process: Mobilizo o time e participo de agendas para melhoria contínua, criando uma lista de ações futuras utilizando métricas de processo como referência
 
 ### L3
-
+N/A
 ### L4
-
+N/A
 ___
 
 ## Teamwork: Dou feedback de forma efetiva (com exemplos) aos membros do time, dando visibilidade dessa ação aos líderes
