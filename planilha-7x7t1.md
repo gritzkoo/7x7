@@ -592,8 +592,26 @@ ___
 
 ### L3
 
+Em todos os projetos que participei, sempre puxei o protagonismo em apresentar a história e o contexto para novos integrantes com a missão de disseminar o máximo de conhecimento possível.
+Para novos membros da equipe, uso uma abordagem não muito ortodoxa, que é recriar do zero algumas partes da documentação do projeto, pois entendo hoje que, o conhecimento é amadurecido no processo de criação dos documentos. Para conseguir uma absorção mais direcionada, principalmente o desenho da arquitetura (c4-model) é recriado explicando os passos do início ao fim das requisições.
+Já para pessoas não técnicas, o uso de apresentações do tipo PowerPoint ajudam a esclarecer de forma mais ambígua os conteúdos!
+A baixo citarei alguns exemplos:
+
+- [2019 - mobile-api]
+  - Fui o responsável por montar a base de conhecimento da API documentando alguns processos no Confluence. A principal mudança da API, que foi a troca do mecanismo de pesquisa de SOLR prar DATAJET, fui o protagonista em montar junto ao PO os dashboards de métricas (grafana, GA) para acompanhamento da conversão da mudança, apresentando resultados nas retros para todo time. Para passagem de conhecimento para demais devs, sempre faço os passos de criação dos diagramas de integrações, para consolidar o conhecimento e entendimento de todos.
+- [2020 - finding]
+  - Durante a transição da equipe, que teve um alto nível de turn-over, fui responsável em disseminar o conhecimento para os novos integrantes passando por todos os projetos ao qual o time de finding era dono na época. Fazendo eventos como pair-programming dojos, foi possível fazer um alinhamento técnico sólido, dando bastante autonomia para os devs. Junto ao PO da época (Drielli), foi possivel criar conteúdos de apresentações das iniciativas da squad para visibilidade corporativa dos avanços do time, sempre utilizando as métricas extraídas dos relatórios de GA/grafana/custos/conversão para compartilhar o valor que as iniciativas tinham.
+- [2021 - APPEX]
+  - Fui escolhido pelo cliente como referência de backend para participar da iniciativa de new app, ao qual vários desafios técnicos precisavam ser resolvidos na plataforma, para entrega de dados resiliente para o novo app. Durante minha participação, fui o protagonista em levantar dados de custos vs débitos técnicos do sonarqube e checkmarx, para mostrar que a plataforma Dafiti estava parada no tempo, e seus principais componentes como bob, alice, checkout estavam cheios de probemas de segurança e de qualidade geral do código. Esses dados serviram de base para estruturar uma iniciativa de atualização do parque técnico, montando iniciativas cross squads para realizar entregas de qualidade e de forma progressiva
 ### L4
 
+-[2018 mofab]
+  - [ESCALA] Fui o responsável em apresentar para o diretor global da ABInbev (Charles Tisdel https://www.linkedin.com/in/charles-tisdell-46a54813/) como funcionava o projeto (em inglês) tanto a nível de código quanto a nível operacional, para validação se o projeto mofab Brasil seria compatível com o desafio de IoT da Africa do Sul. As métricas utilizadas nesse processo foram os indicadores internos de custos de produção de antes da utilização do software vs os indicadores apresentados no software, ao qual era utilizado para tomada de decisões de processos, e a redução de tempo e insumos na produção de cervejas. O indicador de maior engajamento foi de perda de CO² que teve uma queda consideravel de 40% por meio de indicadores do software.
+- [2021~2022 devxp]
+  - [COMPLEXIDADE TÉCNICA] Momento onde fiz a virada de engenharia para SRE, todas as tecnologias onde estou atuando são novas/desconhecidas (helm, kubectl, aws cli, sam cli, puppet, terraform, vault hashicorp, etc) sou o protagonista em estudar e trazer as melhores práticas de uso das ferramentas citadas, sendo referência em configuração de clusters e istio ingress gateway com tls automatizado. Todas as iniciativas de DevXP são voltadas para melhoria da plataforma Dafiti sempre usando métricas (principalmente de custos) para passar com os gestores a importância das iniciativas de DevXP. Os resultados atingidos pelo time estão ganhando visibilidade na GFG Global, e o time da Alemanha está constantemente fazendo reuniões com DevXP para levar as práticas e técnicas para GFG. Entre as metricas, as mais relevantes são:
+    - Redução do tempo para criação de novos microserviços em eks de 3 semanas para 15 minutos (iniciativa backstage)
+    - Redução de custo com AWS de >USD2k com a remoção dos multiplos loadbalancers para usar istio
+    - Redução da carga de trabalho/gestão de certificados emitidos manualmente por sec/sre para automação no cluster, eliminando processo manual, liberando time para outras atividades
 ___
 
 ## Process: Utilizo as ferramentas de acordo com o processo definido pelo time dando plena visibilidade das minhas atividades e do time
